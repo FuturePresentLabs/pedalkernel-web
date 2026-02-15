@@ -18,8 +18,8 @@ Your PedalKernel Pro license has been delivered to your email.
 
 ## Need Help?
 
-- **Installation Guide:** [View Documentation](/docs/installation/)
-- **Support:** [Contact Us](/support/)
-- **Community:** [Join our Discord](https://discord.gg/pedalkernel)
+- **Installation Guide:** View Documentation (coming soon)
+- **Support:** Contact Us (coming soon)
+- **Community:** Join our Discord (coming soon)
 
-{{< license-delivery >}}
+Your license key will be emailed to you shortly after purchase confirmation.

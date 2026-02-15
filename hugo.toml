@@ -55,9 +55,9 @@ theme = 'pedalkernel-theme'
 [taxonomies]
   tag = 'tags'
 
-[module]
-  [[module.imports]]
-    path = "github.com/FuturePresentLabs/gsg-ecommerce"
+# [module]
+#   [[module.imports]]
+#     path = "github.com/FuturePresentLabs/gsg-ecommerce"
 
 [build]
   writeStats = true
