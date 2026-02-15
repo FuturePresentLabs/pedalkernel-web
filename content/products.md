@@ -1,21 +1,27 @@
 ---
 title: "Products"
-description: "PedalKernel plugins, licenses, and custom pedals"
+description: "PedalKernel WDF circuit modeling software"
 ---
 
-## Products
+## Software
 
-We make tools for people who care about tone. Software now, hardware soon.
-
-### Software
+We build circuit modeling tools for musicians who care about what's happening under the hood.
 
 {{< product-grid category="plugins" >}}
 
 ---
 
-### Hardware & Custom Builds
+## Physical Pedals
 
-{{< product-grid category="hardware" >}}
+We don't build hardware — we write code. But our circuits are being turned into physical pedals by our partners at **[Puget Audio](https://puget.audio/)**.
+
+Same WDF models, same component values, but hand-wired with real solder and housed in metal boxes. If you want a PedalKernel circuit you can stomp on, [check them out](https://puget.audio/).
+
+They offer:
+- Standard production pedals based on our circuits
+- Custom one-off builds for the true tone-freaks
+- Laser-engraved enclosures
+- NOS components when available
 
 ---
 

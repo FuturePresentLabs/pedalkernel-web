@@ -1,9 +1,9 @@
 sku: PK-CUSTOM-001
-title: "Boutique Custom Pedal Build"
+title: "Custom Circuit Build (via Puget Audio)"
 price: 250000
 images:
   - "/images/pedalkernel-custom.png"
-short: "Custom-designed pedal built specifically for your rig. Hand-wired, NOS components, limited to 2-3 builds per year."
+short: "Custom circuit design by PedalKernel, physical build by Puget Audio. Hand-wired, NOS components, limited availability."
 available: true
 categories:
   - "hardware"
@@ -12,10 +12,10 @@ categories:
 platforms:
   - "Analog"
 features:
-  - "Initial consultation and circuit design"
+  - "Custom circuit design based on your needs"
+  - "Hand-wired construction by Puget Audio"
   - "Component sourcing (including NOS/rare parts)"
-  - "Hand-wired construction"
-  - "Custom enclosure graphics"
+  - "Laser-engraved enclosure"
   - "Lifetime support and tweaks"
   - "Only 2-3 builds per year"
 stock: 3
@@ -26,4 +26,4 @@ customizations:
   - field_id: "consultation"
     name: "Consultation Required"
     type: "note"
-    description: "Email hello@pedalkernel.com to discuss your custom build before purchasing."
+    description: "Email hello@pedalkernel.com to discuss your custom circuit. Physical build handled by our partners at Puget Audio."

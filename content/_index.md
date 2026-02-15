@@ -1,6 +1,6 @@
 ---
 title: "PedalKernel Pro"
-description: "A VST3 plugin for guitar and bass, made in Seattle"
+description: "Wave Digital Filter guitar effects software, made in Seattle"
 ---
 
 {{< hero >}}
@@ -20,7 +20,7 @@ Instead of approximating how pedals sound, we model how they actually work at th
 
 The same techniques used in academic research and high-end hardware modeling, now in a plugin you can actually afford.
 
-## The Pedals
+## The Circuits
 
 Three classics, modeled component-by-component:
 
@@ -35,9 +35,9 @@ Analog-style bucket-brigade delay. The degradation, the clock noise, the way rep
 
 ## Under the Hood
 
-Built in **Rust** for memory safety without garbage collection. JACK audio integration for pro-level latency. Composable circuit trees mean we can build complex pedals from simple primitives.
+Built in **Rust** for memory safety without garbage collection. JACK audio integration for pro-level latency. Composable circuit trees mean we can build complex circuits from simple primitives.
 
-If you're the type who reads schematic diagrams for fun, check out the [open source kernel](https://github.com/ajmwagar/pedalkernel). The framework is there — build your own pedals, contribute circuits, or just see how it works.
+If you're the type who reads schematic diagrams for fun, check out the [open source kernel](https://github.com/ajmwagar/pedalkernel). The framework is there — build your own effects, contribute circuits, or just see how it works.
 
 ## Made in Seattle
 
@@ -45,13 +45,13 @@ We're based in Seattle, Washington — home of Jimi Hendrix, Nirvana, Soundgarde
 
 This city has a long history of sonic experimentation. We're just carrying that forward into the digital realm.
 
-## Coming Soon: Real Pedals
+## Physical Pedals: The Puget Audio Partnership
 
-Software is just the beginning. We're working on **physical pedals** — the real thing, with actual solder and metal boxes.
+Software is our focus, but we know some of you want the real thing. That's why we've partnered with **[Puget Audio](https://puget.audio/)** — a boutique pedal builder here in Seattle.
 
-And because we can't help ourselves: **boutique one-off pedals** for the true tone-freaks. Custom circuits, hand-wired, limited runs. If you've ever spent an afternoon comparing germanium transistors or swapping capacitors to find "the one," you understand.
+They take our WDF circuit designs and turn them into physical pedals. Same math, same component values, but with actual solder and metal boxes. Hand-wired, laser-engraved, built to last.
 
-Sign up for our mailing list to hear when physical pedals drop. Or don't. We'll be here either way.
+If you want a PedalKernel circuit in physical form, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
 
 ## Pricing
 
@@ -75,11 +75,11 @@ A: VST3 for macOS, Windows, and Linux.
 **Q: Do you offer refunds?**  
 A: Yes, 30 days. If it doesn't work for you, we'll refund no questions asked.
 
-**Q: Will you really make physical pedals?**  
-A: Yes. It's in the works. The WDF framework we're building now becomes the blueprint for analog circuit designs. Same math, different medium.
+**Q: Can I get these circuits as physical pedals?**  
+A: Yes — our partner [Puget Audio](https://puget.audio/) builds physical versions of our circuits. Hand-wired, boutique quality.
 
 **Q: Can I hack on this?**  
-A: The kernel is open source at [github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel). The plugin is built on top of it. If you want to understand how WDF works or build your own pedals, start there.
+A: The kernel is open source at [github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel). The plugin is built on top of it. If you want to understand how WDF works or build your own circuits, start there.
 
 ## Contact
 
