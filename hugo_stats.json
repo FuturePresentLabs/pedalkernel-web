@@ -2,7 +2,6 @@
   "htmlElements": {
     "tags": [
       "a",
-      "blockquote",
       "body",
       "br",
       "div",
@@ -45,14 +44,19 @@
       "price-note"
     ],
     "ids": [
+      "coming-soon-real-pedals",
       "contact",
+      "delay",
       "faq",
-      "features",
+      "fuzzface",
       "made-in-seattle",
       "main-content",
       "need-help",
+      "overdrive",
       "pricing",
       "thank-you",
+      "the-pedals",
+      "under-the-hood",
       "what-happens-next",
       "what-is-it"
     ]

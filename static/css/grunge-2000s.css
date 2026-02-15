@@ -373,9 +373,60 @@ footer a {
 blockquote {
   border-left: 3px solid var(--accent);
   padding-left: 1rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   font-style: italic;
   color: var(--text-muted);
+}
+
+/* FAQ styling */
+main .container > p strong {
+  color: var(--accent);
+}
+
+/* Code/technical terms */
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  background: var(--bg-alt);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+/* Emphasis on technical terms */
+em {
+  font-style: italic;
+}
+
+/* Strong/bold */
+strong {
+  font-weight: bold;
+  color: var(--text);
+}
+
+/* Pedal descriptions */
+main .container > h3 + p {
+  margin-top: 0.5rem;
+}
+
+/* Coming soon section emphasis */
+main .container > h2:nth-of-type(5) {
+  color: var(--accent);
+}
+
+/* Technical list (Why WDF) */
+main .container > ul:first-of-type {
+  background: var(--bg-alt);
+  padding: 1.5rem 2rem 1.5rem 3rem;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+main .container > ul:first-of-type li {
+  margin-bottom: 0.75rem;
+}
+
+main .container > ul:first-of-type li:last-child {
+  margin-bottom: 0;
 }
 
 /* Links */
