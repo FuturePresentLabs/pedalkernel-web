@@ -442,11 +442,12 @@ a:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
 }
 
 th, td {
-  padding: 0.5rem;
+  padding: 0.75rem 0.5rem;
   text-align: left;
   border-bottom: 1px solid var(--border);
 }
@@ -454,4 +455,47 @@ th, td {
 th {
   font-weight: bold;
   border-bottom: 2px solid var(--border-dark);
+  background: var(--bg-alt);
+}
+
+tr:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+/* Products page */
+main .container > hr {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 2.5rem auto;
+  max-width: 650px;
+}
+
+.product-section {
+  margin: 2rem auto;
+  max-width: 650px;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0.5rem 0;
+}
+
+.product-type {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* GitHub link */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.github-link:hover svg {
+  color: var(--accent);
 }
