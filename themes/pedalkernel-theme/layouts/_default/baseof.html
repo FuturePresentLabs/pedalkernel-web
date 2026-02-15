@@ -20,6 +20,15 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}">
+  
+  <!-- GSG Ecommerce -->
+  <script src="https://cdn.gsgmfg.com/ecommerce/v1/gsg-cart.js" async></script>
+  <script>
+    window.GSG_CONFIG = {
+      storefront: 'pedalkernel',
+      apiBase: 'https://api.gsgmfg.com'
+    };
+  </script>
 </head>
 <body>
   {{ partial "header.html" . }}
