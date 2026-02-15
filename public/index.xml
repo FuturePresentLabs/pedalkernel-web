@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PedalKernel Pro</title><link>https://pedalkernel.com/</link><description>Recent content on PedalKernel Pro</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://pedalkernel.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Checkout</title><link>https://pedalkernel.com/checkout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pedalkernel.com/checkout/</guid><description>&lt;!-- raw HTML omitted --&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PedalKernel Pro</title><link>https://pedalkernel.com/</link><description>Recent content on PedalKernel Pro</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://pedalkernel.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Cart</title><link>https://pedalkernel.com/cart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pedalkernel.com/cart/</guid><description>&lt;h2 id="shopping-cart"&gt;Shopping Cart&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description></item><item><title>Checkout</title><link>https://pedalkernel.com/checkout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pedalkernel.com/checkout/</guid><description>&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -8,21 +12,172 @@
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;</description></item><item><title>Products</title><link>https://pedalkernel.com/products/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pedalkernel.com/products/</guid><description>&lt;h2 id="products"&gt;Products&lt;/h2&gt;
 &lt;p&gt;We make tools for people who care about tone. Software now, hardware soon.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="software"&gt;Software&lt;/h2&gt;
-&lt;h3 id="pedalkernel-free"&gt;PedalKernel Free&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;$0&lt;/strong&gt; — VST3 Plugin&lt;/p&gt;
-&lt;p&gt;The essentials. Three core effects (Overdrive, Fuzz, Delay) with standard controls. Perfect for trying us out or if you just need solid tones without the deep tweaking.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Overdrive, Fuzz, Delay&lt;/li&gt;
-&lt;li&gt;Standard parameter controls&lt;/li&gt;
-&lt;li&gt;VST3 for macOS, Windows, Linux&lt;/li&gt;
-&lt;li&gt;Community support&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="#"&gt;Download Free →&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id="pedalkernel-pro-guitar"&gt;PedalKernel Pro (Guitar)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;$49&lt;/strong&gt; — VST3 Plugin License&lt;/p&gt;</description></item><item><title>Thank You!</title><link>https://pedalkernel.com/success/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pedalkernel.com/success/</guid><description>&lt;h2 id="thank-you"&gt;Thank You!&lt;/h2&gt;
+&lt;h3 id="software"&gt;Software&lt;/h3&gt;
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+&lt;ul class="product-grid"&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;li class="product-card" data-sku="PK-FREE-001"&gt;
+ &lt;a href="https://pedalkernel.com/products/pedalkernel-free/" class="product-card__link"&gt;
+ &lt;div class="product-card__media"&gt;
+ 
+ &lt;img src="https://pedalkernel.com/images/pedalkernel-free.png" alt="PedalKernel Free" loading="lazy"&gt;
+ 
+ &lt;/div&gt;
+ &lt;div class="product-card__body"&gt;
+ &lt;h3 class="product-card__title"&gt;PedalKernel Free&lt;/h3&gt;
+ 
+ &lt;p class="product-card__short"&gt;Essential guitar effects. Overdrive, Fuzz, and Delay for trying us out.&lt;/p&gt;
+ 
+ &lt;div class="product-card__footer"&gt;
+ &lt;span class="product-card__price"&gt;
+ 
+ Free
+ 
+ &lt;/span&gt;
+ 
+ &lt;button class="buy-button buy-button-small" 
+ data-add-to-cart 
+ data-sku="PK-FREE-001"
+ data-title="PedalKernel Free"
+ data-price-cents="0"
+ data-qty="1"&gt;
+ Add to Cart
+ &lt;/button&gt;
+ 
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;li class="product-card" data-sku="PK-PRO-GTR-001"&gt;
+ &lt;a href="https://pedalkernel.com/products/pedalkernel-pro/" class="product-card__link"&gt;
+ &lt;div class="product-card__media"&gt;
+ 
+ &lt;img src="https://pedalkernel.com/images/pedalkernel-pro-gtr.png" alt="PedalKernel Pro (Guitar)" loading="lazy"&gt;
+ 
+ &lt;/div&gt;
+ &lt;div class="product-card__body"&gt;
+ &lt;h3 class="product-card__title"&gt;PedalKernel Pro (Guitar)&lt;/h3&gt;
+ 
+ &lt;p class="product-card__short"&gt;Full WDF modeling engine for guitar. Component-level circuit simulation with deep control.&lt;/p&gt;
+ 
+ &lt;div class="product-card__footer"&gt;
+ &lt;span class="product-card__price"&gt;
+ 
+ $49.00
+ 
+ &lt;/span&gt;
+ 
+ &lt;button class="buy-button buy-button-small" 
+ data-add-to-cart 
+ data-sku="PK-PRO-GTR-001"
+ data-title="PedalKernel Pro (Guitar)"
+ data-price-cents="4900"
+ data-qty="1"&gt;
+ Add to Cart
+ &lt;/button&gt;
+ 
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/a&gt;
+ &lt;/li&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;li class="product-card" data-sku="PK-PRO-BASS-001"&gt;
+ &lt;a href="https://pedalkernel.com/products/pedalkernel-pro-bass/" class="product-card__link"&gt;
+ &lt;div class="product-card__media"&gt;
+ 
+ &lt;img src="https://pedalkernel.com/images/pedalkernel-pro-bass.png" alt="PedalKernel Pro (Bass)" loading="lazy"&gt;
+ 
+ &lt;/div&gt;
+ &lt;div class="product-card__body"&gt;
+ &lt;h3 class="product-card__title"&gt;PedalKernel Pro (Bass)&lt;/h3&gt;
+ 
+ &lt;p class="product-card__short"&gt;WDF modeling engine optimized for bass. Extended low-frequency response and tailored EQ curves.&lt;/p&gt;</description></item><item><title>Thank You!</title><link>https://pedalkernel.com/success/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pedalkernel.com/success/</guid><description>&lt;h2 id="thank-you"&gt;Thank You!&lt;/h2&gt;
 &lt;p&gt;Your purchase of PedalKernel Pro is complete.&lt;/p&gt;
 &lt;h3 id="what-happens-next"&gt;What happens next:&lt;/h3&gt;
 &lt;ol&gt;

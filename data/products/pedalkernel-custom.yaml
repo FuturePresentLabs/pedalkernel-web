@@ -1,0 +1,29 @@
+sku: PK-CUSTOM-001
+title: "Boutique Custom Pedal Build"
+price: 250000
+images:
+  - "/images/pedalkernel-custom.png"
+short: "Custom-designed pedal built specifically for your rig. Hand-wired, NOS components, limited to 2-3 builds per year."
+available: true
+categories:
+  - "hardware"
+  - "boutique"
+  - "custom"
+platforms:
+  - "Analog"
+features:
+  - "Initial consultation and circuit design"
+  - "Component sourcing (including NOS/rare parts)"
+  - "Hand-wired construction"
+  - "Custom enclosure graphics"
+  - "Lifetime support and tweaks"
+  - "Only 2-3 builds per year"
+stock: 3
+weight: 500
+type: "physical"
+max_quantity: 1
+customizations:
+  - field_id: "consultation"
+    name: "Consultation Required"
+    type: "note"
+    description: "Email hello@pedalkernel.com to discuss your custom build before purchasing."

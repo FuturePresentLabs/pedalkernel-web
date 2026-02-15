@@ -1,0 +1,26 @@
+sku: PK-FREE-001
+title: "PedalKernel Free"
+price: 0
+images:
+  - "/images/pedalkernel-free.png"
+short: "Essential guitar effects. Overdrive, Fuzz, and Delay for trying us out."
+available: true
+categories:
+  - "plugins"
+  - "free"
+platforms:
+  - "VST3"
+  - "macOS"
+  - "Windows"
+  - "Linux"
+features:
+  - "Overdrive, Fuzz, Delay"
+  - "Standard parameter controls"
+  - "VST3 format"
+  - "1 device activation"
+  - "Community support"
+stock: 999
+weight: 0
+type: "digital"
+max_quantity: 1
+customizations: []

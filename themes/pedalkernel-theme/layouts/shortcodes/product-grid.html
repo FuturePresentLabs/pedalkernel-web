@@ -1,0 +1,70 @@
+{{/* Product Grid Shortcode - GSG Ecommerce compatible with 2000s styling */}}
+{{ $category := .Get "category" }}
+{{ $productData := site.Data.products }}
+{{ $products := slice }}
+
+{{ range $k, $product := $productData }}
+  {{ $isHidden := or (default false $product.hide) (default false $product.hidden) }}
+  {{ $inCategory := false }}
+  {{ range $product.categories }}
+    {{ if eq . $category }}{{ $inCategory = true }}{{ end }}
+  {{ end }}
+  {{ if and (not $isHidden) $inCategory }}
+    {{ $products = $products | append (dict "slug" $k "product" $product) }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $products) 0 }}
+<ul class="product-grid">
+  {{ range $products }}
+    {{ $slug := .slug }}
+    {{ $p := .product }}
+    {{ $priceCents := int ($p.price | default 0) }}
+    {{ $title := $p.title | default $slug }}
+    {{ $image := "" }}
+    {{ with index $p.images 0 }}
+      {{ $image = . | relURL }}
+    {{ end }}
+    {{ $link := printf "/products/%s/" $slug | relURL }}
+    
+    <li class="product-card" data-sku="{{ $p.sku }}">
+      <a href="{{ $link }}" class="product-card__link">
+        <div class="product-card__media">
+          {{ if $image }}
+            <img src="{{ $image }}" alt="{{ $title }}" loading="lazy">
+          {{ else }}
+            <div class="product-card__placeholder">{{ $title }}</div>
+          {{ end }}
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">{{ $title }}</h3>
+          {{ with $p.short }}
+            <p class="product-card__short">{{ . }}</p>
+          {{ end }}
+          <div class="product-card__footer">
+            <span class="product-card__price">
+              {{ if eq $priceCents 0 }}
+                Free
+              {{ else }}
+                ${{ printf "%.2f" (div (float $priceCents) 100.0) }}
+              {{ end }}
+            </span>
+            {{ if site.Params.selling }}
+              <button class="buy-button buy-button-small" 
+                      data-add-to-cart 
+                      data-sku="{{ $p.sku }}"
+                      data-title="{{ $title }}"
+                      data-price-cents="{{ $priceCents }}"
+                      data-qty="1">
+                Add to Cart
+              </button>
+            {{ end }}
+          </div>
+        </div>
+      </a>
+    </li>
+  {{ end }}
+</ul>
+{{ else }}
+  <p>No products found in this category.</p>
+{{ end }}

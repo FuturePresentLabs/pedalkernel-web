@@ -1,26 +1,26 @@
-sku: PK-PRO-001
-title: "PedalKernel Pro"
+sku: PK-PRO-GTR-001
+title: "PedalKernel Pro (Guitar)"
 price: 4900
 images:
-  - "/images/pedalkernel-hero.png"
-short: "Professional VST3 plugin for guitar & bass effects processing with analog circuit modeling"
+  - "/images/pedalkernel-pro-gtr.png"
+short: "Full WDF modeling engine for guitar. Component-level circuit simulation with deep control."
 available: true
 categories:
   - "plugins"
-  - "vst3"
-  - "guitar-effects"
+  - "guitar"
+  - "pro"
 platforms:
   - "VST3"
   - "macOS"
   - "Windows"
   - "Linux"
 features:
-  - "Wave Digital Filter analog modeling"
-  - "Zero-latency processing"
-  - "Overdrive, fuzz, delay effects"
-  - "Real-time parameter automation"
-  - "3 simultaneous activations"
-  - "Lifetime free updates"
+  - "Overdrive, Fuzz, Delay with deep parameter control"
+  - "Access to component values"
+  - "Temperature modeling for germanium fuzz"
+  - "3 device activations"
+  - "Lifetime updates"
+  - "Email support"
 stock: 999
 weight: 0
 type: "digital"

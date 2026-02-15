@@ -1,0 +1,28 @@
+sku: PK-PRO-BASS-001
+title: "PedalKernel Pro (Bass)"
+price: 4900
+images:
+  - "/images/pedalkernel-pro-bass.png"
+short: "WDF modeling engine optimized for bass. Extended low-frequency response and tailored EQ curves."
+available: true
+categories:
+  - "plugins"
+  - "bass"
+  - "pro"
+platforms:
+  - "VST3"
+  - "macOS"
+  - "Windows"
+  - "Linux"
+features:
+  - "Bass-optimized Overdrive, Fuzz, Delay"
+  - "Extended frequency response (down to 20Hz)"
+  - "Tailored EQ curves for bass instruments"
+  - "3 device activations"
+  - "Lifetime updates"
+  - "Email support"
+stock: 999
+weight: 0
+type: "digital"
+max_quantity: 1
+customizations: []

@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{ $slug := .Params.slug | default .File.BaseFileName }}
+{{ $product := index site.Data.products $slug }}
+
+{{ if not $product }}
+  <div class="container">
+    <p>Product not found.</p>
+    <p><a href="/products/">← Back to products</a></p>
+  </div>
+{{ else }}
+  {{ $priceCents := int ($product.price | default 0) }}
+  {{ $title := $product.title | default $slug }}
+  {{ $image := "" }}
+  {{ with index $product.images 0 }}
+    {{ $image = . | relURL }}
+  {{ end }}
+  
+  <article class="product-single container">
+    <p class="back-link"><a href="/products/">← Back to products</a></p>
+    
+    <div class="product-single__layout">
+      <div class="product-single__media">
+        {{ if $image }}
+          <img src="{{ $image }}" alt="{{ $title }}">
+        {{ else }}
+          <div class="product-single__placeholder">{{ $title }}</div>
+        {{ end }}
+      </div>
+      
+      <div class="product-single__info">
+        <h1>{{ $title }}</h1>
+        
+        <div class="product-single__price">
+          {{ if eq $priceCents 0 }}
+            <span class="price">Free</span>
+          {{ else }}
+            <span class="price">${{ printf "%.2f" (div (float $priceCents) 100.0) }}</span>
+          {{ end }}
+        </div>
+        
+        {{ with $product.short }}
+          <p class="product-single__short">{{ . }}</p>
+        {{ end }}
+        
+        {{ if site.Params.selling }}
+          <div class="product-single__actions">
+            <button class="buy-button" 
+                    data-add-to-cart 
+                    data-sku="{{ $product.sku }}"
+                    data-title="{{ $title }}"
+                    data-price-cents="{{ $priceCents }}"
+                    data-qty="1">
+              Add to Cart
+            </button>
+            <a href="/checkout/" class="btn btn-secondary">Go to Checkout</a>
+          </div>
+        {{ end }}
+        
+        {{ with $product.features }}
+          <div class="product-single__features">
+            <h3>Features</h3>
+            <ul>
+              {{ range . }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+        
+        {{ with $product.customizations }}
+          <div class="product-single__customizations">
+            <h3>Important Notes</h3>
+            {{ range . }}
+              <p><strong>{{ .name }}:</strong> {{ .description }}</p>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+    
+    <div class="product-single__content">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}
+{{ end }}
