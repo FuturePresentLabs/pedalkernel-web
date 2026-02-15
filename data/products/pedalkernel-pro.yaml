@@ -2,8 +2,8 @@ sku: PK-PRO-GTR-001
 title: "PedalKernel Pro (Guitar)"
 price: 4900
 images:
-  - "/images/pedalkernel-pro-gtr.png"
-short: "Full WDF modeling engine for guitar. Component-level circuit simulation with deep control."
+  - "/images/pedalkernel-pro-ui.png"
+short: "Full WDF modeling engine with 15+ effects. Component-level circuit simulation with deep control."
 available: true
 categories:
   - "plugins"
@@ -15,9 +15,11 @@ platforms:
   - "Windows"
   - "Linux"
 features:
-  - "Overdrive, Fuzz, Delay with deep parameter control"
+  - "15+ pedal effects including all Free effects plus: Tremolo, Rotary, Compressor, EQ, and more"
   - "Access to component values"
   - "Temperature modeling for germanium fuzz"
+  - "Oscilloscope and spectrum analyzer"
+  - "Circuit diagram view"
   - "3 device activations"
   - "Lifetime updates"
   - "Email support"

@@ -30,12 +30,14 @@ They offer:
 | Feature | Free | Pro (Guitar) | Pro (Bass) |
 |---------|------|--------------|------------|
 | Price | $0 | $49 | $49 |
-| Overdrive | ✓ | ✓ (deep control) | ✓ (bass-optimized) |
-| Fuzz | ✓ | ✓ (deep control) | ✓ (bass-optimized) |
-| Delay | ✓ | ✓ (deep control) | ✓ (bass-optimized) |
+| Effects | 7 pedals | 15+ pedals | 15+ bass-optimized |
+| Overdrive, Fuzz, Delay | ✓ | ✓ (deep control) | ✓ (bass-optimized) |
+| Chorus, Phaser, Reverb, Wah | ✓ | ✓ | ✓ |
+| Tremolo, Rotary, Compressor, EQ | — | ✓ | ✓ |
 | WDF Engine | Basic | Full | Full |
 | Component Access | — | ✓ | ✓ |
-| Temperature Modeling | — | ✓ | ✓ |
+| Circuit Diagram View | — | ✓ | — |
+| Spectrum Analyzer | — | ✓ | ✓ (bass-focused) |
 | Activations | 1 | 3 | 3 |
 | Updates | Major only | Lifetime | Lifetime |
 | Support | Community | Email | Email |
