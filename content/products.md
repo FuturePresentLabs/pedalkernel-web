@@ -38,7 +38,7 @@ They offer:
 | Component Access | — | ✓ | ✓ |
 | Circuit Diagram View | — | ✓ | — |
 | Spectrum Analyzer | — | ✓ | ✓ (bass-focused) |
-| Activations | 1 | 3 | 3 |
+| Activations | 1 | Unlimited | Unlimited |
 | Updates | Major only | Lifetime | Lifetime |
 | Support | Community | Email | Email |
 
