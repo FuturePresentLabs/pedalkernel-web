@@ -1,13 +1,31 @@
 ---
 title: "Checkout"
-description: "Complete your PedalKernel Pro purchase"
+description: "Buy PedalKernel Pro"
 layout: checkout
 ---
 
-# Complete Your Purchase
+<div class="checkout-section">
+  <p><a href="/" class="back-link">← Back to PedalKernel Pro</a></p>
 
-You're purchasing **PedalKernel Pro** - Professional VST3 Plugin
+  <h2>Checkout</h2>
 
-**Price:** $49.00 USD (one-time purchase, lifetime updates)
+  <p>You're buying <strong>PedalKernel Pro</strong> — $49 USD</p>
 
-The checkout form will appear here. Please wait while we load the secure payment form...
+  <p>This is a one-time purchase. You'll receive a license key via email immediately after payment.</p>
+
+  <div id="checkout-form" style="margin: 2rem 0; padding: 2rem; background: #e8e8e4; border: 1px solid #ccc;">
+    <p><em>Checkout form will appear here once payment processing is connected.</em></p>
+    <p>For now, please contact <a href="mailto:hello@pedalkernel.com">hello@pedalkernel.com</a> to purchase.</p>
+  </div>
+
+  <h3>What you get:</h3>
+  <ul>
+    <li>VST3 plugin for macOS, Windows, and Linux</li>
+    <li>3 device activations</li>
+    <li>All future updates, free</li>
+    <li>30-day money-back guarantee</li>
+  </ul>
+
+  <h3>Questions?</h3>
+  <p>Email us at <a href="mailto:hello@pedalkernel.com">hello@pedalkernel.com</a></p>
+</div>

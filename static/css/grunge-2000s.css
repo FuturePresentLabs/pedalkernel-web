@@ -1,0 +1,365 @@
+/* PedalKernel Pro - Early 2000s Seattle Grunge Aesthetic */
+/* Inspired by independent music software companies of the era */
+
+:root {
+  --bg: #f4f4f0;
+  --bg-alt: #e8e8e4;
+  --text: #222;
+  --text-muted: #666;
+  --accent: #c41e3a; /* Seattle grunge red */
+  --accent-alt: #2d5016; /* Evergreen */
+  --link: #1a5490;
+  --border: #ccc;
+  --border-dark: #999;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Header - Simple, clean */
+header {
+  background: var(--bg-alt);
+  border-bottom: 2px solid var(--border-dark);
+  padding: 1rem 0;
+}
+
+header .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--text);
+  font-weight: normal;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero - Not too grabby */
+.hero {
+  padding: 3rem 0;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.hero-location {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero-location::before {
+  content: "📍 ";
+}
+
+/* Plugin mockup - simple */
+.plugin-mockup {
+  background: #2a2a2a;
+  border: 3px solid var(--border-dark);
+  border-radius: 4px;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+.plugin-header {
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  font-family: monospace;
+}
+
+.plugin-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.knob {
+  text-align: center;
+}
+
+.knob-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #444, #222);
+  border: 2px solid #555;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.knob-circle::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 10px;
+  background: #c41e3a;
+}
+
+.knob-label {
+  color: #aaa;
+  font-size: 0.7rem;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #333;
+  border: 1px solid #555;
+  margin: 0 auto;
+}
+
+.led.on {
+  background: #c41e3a;
+  box-shadow: 0 0 8px #c41e3a;
+}
+
+/* Sections */
+section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--accent);
+}
+
+/* Features - simple list */
+.features-list {
+  list-style: none;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-alt);
+  font-weight: bold;
+}
+
+/* Seattle section */
+.seattle-section {
+  background: var(--bg-alt);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 4px solid var(--accent);
+}
+
+.seattle-section h3 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.seattle-section p {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Pricing - simple, not grabby */
+.pricing {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.price {
+  font-size: 3rem;
+  color: var(--text);
+  font-weight: normal;
+}
+
+.price-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Buy button - understated */
+.buy-button {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #a01830;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.buy-button:hover {
+  background: #a01830;
+}
+
+.buy-button-small {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Checkout page */
+.checkout-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.back-link {
+  color: var(--link);
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+/* Form - simple */
+form {
+  margin: 1.5rem 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-dark);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background: var(--bg-alt);
+  border-top: 2px solid var(--border-dark);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--link);
+}
+
+/* Quotes/testimonials */
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Links */
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  font-weight: bold;
+  border-bottom: 2px solid var(--border-dark);
+}

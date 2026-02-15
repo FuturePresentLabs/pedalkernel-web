@@ -1,25 +1,24 @@
 ---
-title: "Purchase Complete!"
-description: "Your PedalKernel Pro license has been delivered"
+title: "Thank You!"
+description: "Your PedalKernel Pro purchase"
 layout: success
 ---
 
-# 🎉 Thank You for Your Purchase!
+## Thank You!
 
-Your PedalKernel Pro license has been delivered to your email.
+Your purchase of PedalKernel Pro is complete.
 
-## What's Next?
+### What happens next:
 
-1. **Check your email** for your license key and download link
-2. **Download the plugin** from the link provided
-3. **Install** in your VST3 plugins folder
-4. **Activate** using your license key
-5. **Start making music!**
+1. Check your email for your license key
+2. Download the plugin from the link in that email
+3. Install in your VST3 plugins folder
+4. Start making music
 
-## Need Help?
+### Need help?
 
-- **Installation Guide:** View Documentation (coming soon)
-- **Support:** Contact Us (coming soon)
-- **Community:** Join our Discord (coming soon)
+Email us: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
 
-Your license key will be emailed to you shortly after purchase confirmation.
+We're a small team in Seattle, so we might not reply instantly — but we will reply.
+
+[← Back to PedalKernel Pro](/)
