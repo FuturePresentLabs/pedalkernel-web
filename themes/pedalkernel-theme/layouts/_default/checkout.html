@@ -1,0 +1,139 @@
+{{ define "main" }}
+<section class="checkout-page">
+  <div class="container">
+    <div class="checkout-grid">
+      <div class="checkout-form-section">
+        <a href="/" class="back-link">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 10H5M5 10L10 5M5 10L10 15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to PedalKernel Pro
+        </a>
+        
+        <h1>Complete Your Purchase</h1>
+        <p class="checkout-subtitle">Secure checkout powered by Stripe</p>
+        
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-section">
+            <h2>Contact Information</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                <span class="form-hint">Your license key will be sent here</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2>Payment Details</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-element">Card Information</label>
+                <div id="card-element" class="card-input">
+                  <!-- Stripe Card Element will be inserted here -->
+                </div>
+                <div id="card-errors" class="card-errors" role="alert"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2>Billing Address</h2>
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                  <option value="">Select Country</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="AU">Australia</option>
+                  <option value="JP">Japan</option>
+                  <option value="OTHER">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="checkout-security">
+            <div class="security-item">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 6V11C3 15.5 6 19.26 10 20C14 19.26 17 15.5 17 11V6L10 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Secure 256-bit SSL encryption</span>
+            </div>
+            <div class="security-item">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 6V11C3 15.5 6 19.26 10 20C14 19.26 17 15.5 17 11V6L10 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>PCI DSS compliant</span>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg btn-full" id="submit-button">
+            <span class="button-text">Pay $49.00</span>
+            <span class="button-spinner" style="display: none;">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2V6M10 14V18M2 10H6M14 10H18M4.343 4.343L7.172 7.172M12.828 12.828L15.657 15.657M4.343 15.657L7.172 12.828M12.828 7.172L15.657 4.343" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+        </form>
+        
+        <p class="checkout-terms">
+          By completing this purchase, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.
+        </p>
+      </div>
+      
+      <div class="checkout-summary">
+        <div class="summary-card">
+          <h3>Order Summary</h3>
+          <div class="summary-item">
+            <div class="item-info">
+              <span class="item-name">PedalKernel Pro</span>
+              <span class="item-desc">VST3 Plugin License</span>
+            </div>
+            <span class="item-price">$49.00</span>
+          </div>
+          
+          <div class="summary-features">
+            <div class="summary-feature">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2"/><path d="M5 8L7 10L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Lifetime license</span>
+            </div>
+            <div class="summary-feature">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2"/><path d="M5 8L7 10L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>3 activations included</span>
+            </div>
+            <div class="summary-feature">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2"/><path d="M5 8L7 10L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>All future updates free</span>
+            </div>
+          </div>
+          
+          <div class="summary-divider"></div>
+          
+          <div class="summary-total">
+            <span>Total</span>
+            <span class="total-price">$49.00 USD</span>
+          </div>
+          
+          <div class="summary-guarantee">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 6V11C3 15.5 6 19.26 10 20C14 19.26 17 15.5 17 11V6L10 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>30-day money-back guarantee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

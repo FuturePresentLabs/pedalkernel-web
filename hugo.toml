@@ -1,0 +1,86 @@
+baseURL = 'https://pedalkernel.com'
+languageCode = 'en-us'
+title = 'PedalKernel Pro'
+theme = 'pedalkernel-theme'
+
+[params]
+  tagline = "Professional VST3 Plugin for Guitar & Bass"
+  description = "Wave Digital Filter-based guitar effects plugin with analog circuit modeling. Overdrive, fuzz, delay, and more."
+  selling = true
+  stock_display_cap = 100
+  price = 49.00
+  currency = "USD"
+  
+  [params.brand]
+    name = "PedalKernel"
+    key = "pedalkernel"
+    logo = "/images/pedalkernel-logo.svg"
+  
+  [params.seo]
+    description = "PedalKernel Pro - Professional VST3 plugin for guitar and bass effects processing using Wave Digital Filter technology."
+    keywords = ["VST3 plugin", "guitar effects", "bass effects", "overdrive", "fuzz", "delay", "analog modeling", "WDF", "wave digital filter"]
+  
+  [params.social]
+    image = "/images/og-image.jpg"
+    twitter = "@pedalkernel"
+  
+  [params.stripe]
+    publicKey = "pk_test_YOUR_STRIPE_PUBLIC_KEY"
+    secretKey = "${STRIPE_SECRET_KEY}"
+    webhookSecret = "${STRIPE_WEBHOOK_SECRET}"
+    successUrl = "/success/"
+    cancelUrl = "/"
+    
+  [params.products]
+    [params.products.pedalkernel-pro-license]
+      sku = "pedalkernel-pro-license"
+      name = "PedalKernel Pro"
+      description = "Professional VST3 plugin license for PedalKernel Pro"
+      price = 4900
+      currency = "usd"
+      type = "digital"
+      deliverable = "license_key"
+      max_quantity = 1
+
+[menu]
+  [[menu.main]]
+    name = 'Features'
+    url = '/#features'
+    weight = 10
+  
+  [[menu.main]]
+    name = 'Demos'
+    url = '/#demos'
+    weight = 20
+  
+  [[menu.main]]
+    name = 'Pricing'
+    url = '/#pricing'
+    weight = 30
+  
+  [[menu.main]]
+    name = 'FAQ'
+    url = '/#faq'
+    weight = 40
+
+[taxonomies]
+  tag = 'tags'
+
+[module]
+  [[module.imports]]
+    path = "github.com/FuturePresentLabs/gsg-ecommerce"
+
+[build]
+  writeStats = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.tagline }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.seo.description }}{{ end }}">
+  <meta name="keywords" content="{{ if .Site.Params.seo.keywords }}{{ delimit .Site.Params.seo.keywords "," }}{{ end }}">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ .Title | default .Site.Title }}">
+  <meta property="og:description" content="{{ .Description | default .Site.Params.seo.description }}">
+  <meta property="og:image" content="{{ .Site.Params.social.image | absURL }}">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ "css/rhino-theme.css" | relURL }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}">
+  
+  <!-- Stripe -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="rhino-theme">
+  {{ partial "header.html" . }}
+  
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+  
+  {{ partial "footer.html" . }}
+  
+  <!-- Scripts -->
+  <script src="{{ "js/main.js" | relURL }}"></script>
+  <script src="{{ "js/checkout.js" | relURL }}"></script>
+</body>
+</html>
