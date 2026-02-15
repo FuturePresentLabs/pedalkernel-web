@@ -24,23 +24,12 @@ theme = 'pedalkernel-theme'
     image = "/images/og-image.jpg"
     twitter = "@pedalkernel"
   
-  [params.stripe]
-    publicKey = "pk_test_YOUR_STRIPE_PUBLIC_KEY"
-    secretKey = "${STRIPE_SECRET_KEY}"
-    webhookSecret = "${STRIPE_WEBHOOK_SECRET}"
-    successUrl = "/success/"
-    cancelUrl = "/"
-    
-  [params.products]
-    [params.products.pedalkernel-pro-license]
-      sku = "pedalkernel-pro-license"
-      name = "PedalKernel Pro"
-      description = "Professional VST3 plugin license for PedalKernel Pro"
-      price = 4900
-      currency = "usd"
-      type = "digital"
-      deliverable = "license_key"
-      max_quantity = 1
+  [params.api]
+    base = "https://api.gsgmfg.com"
+  
+  [params.fluidpay]
+    tokenizerScript = "https://app.fluidpay.com/tokenizer/tokenizer.js"
+    publicKey = "your-fluidpay-public-key"
 
 [menu]
   [[menu.main]]
