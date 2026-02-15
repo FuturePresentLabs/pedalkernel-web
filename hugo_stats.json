@@ -2,8 +2,10 @@
   "htmlElements": {
     "tags": [
       "a",
+      "article",
       "body",
       "br",
+      "button",
       "div",
       "footer",
       "h1",
@@ -12,6 +14,7 @@
       "head",
       "header",
       "html",
+      "img",
       "li",
       "link",
       "main",
@@ -29,6 +32,9 @@
       "ul"
     ],
     "classes": [
+      "back-link",
+      "btn",
+      "btn-secondary",
       "buy-button",
       "container",
       "github-link",
@@ -45,9 +51,21 @@
       "plugin-body",
       "plugin-header",
       "plugin-mockup",
-      "price-note"
+      "price",
+      "price-note",
+      "product-single",
+      "product-single__actions",
+      "product-single__content",
+      "product-single__customizations",
+      "product-single__features",
+      "product-single__info",
+      "product-single__layout",
+      "product-single__media",
+      "product-single__price",
+      "product-single__short"
     ],
     "ids": [
+      "checkout",
       "coming-soon-real-pedals",
       "contact",
       "delay",

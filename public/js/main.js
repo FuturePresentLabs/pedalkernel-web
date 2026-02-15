@@ -1,37 +1,34 @@
 // PedalKernel Pro - Main JavaScript
-// Rhino-inspired interactions
+// GSG Ecommerce Cart Integration
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize GSG Cart
-  if (window.GSGCart) {
-    window.GSGCart.init({
+(function() {
+  'use strict';
+
+  // Initialize GSG Cart when ready
+  function initGSGCart() {
+    if (typeof GSGCart === 'undefined') {
+      console.warn('GSG Cart not loaded yet, retrying...');
+      setTimeout(initGSGCart, 100);
+      return;
+    }
+
+    // Initialize cart with config
+    GSGCart.init({
+      storefront: 'pedalkernel',
       apiBase: 'https://api.gsgmfg.com',
-      storefront: 'pedalkernel'
+      persist: true
     });
+
+    console.log('GSG Cart initialized');
+
+    // Dispatch event for other scripts
+    document.dispatchEvent(new CustomEvent('gsg-cart:ready'));
   }
-  
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-  
-  // Animate waveform bars
-  const waveBars = document.querySelectorAll('.wave-bar');
-  if (waveBars.length) {
-    setInterval(() => {
-      waveBars.forEach(bar => {
-        const height = 30 + Math.random() * 70;
-        bar.style.height = height + '%';
-      });
-    }, 100);
+
+  // Wait for DOM and GSG script
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGSGCart);
+  } else {
+    initGSGCart();
   }
-});
+})();
