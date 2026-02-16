@@ -1,73 +1,83 @@
 {{ define "main" }}
-{{ $slug := .Params.slug | default .File.BaseFileName }}
-{{ $product := index site.Data.products $slug }}
+{{ $slug := .File.ContentBaseName }}
+{{ $p := index site.Data.products $slug }}
+{{ $img := (index $p.images 0) }}
 
-{{ if not $product }}
-  <div class="container">
-    <p>Product not found.</p>
-    <p><a href="/products/">← Back to products</a></p>
-  </div>
-{{ else }}
-  {{ $priceCents := int ($product.price | default 0) }}
-  {{ $title := $product.title | default $slug }}
-  {{ $image := "" }}
-  {{ with index $product.images 0 }}
-    {{ $image = . | relURL }}
+{{ $w := 800 }}
+{{ $h := 533 }}
+
+{{ $imgURL := "" }}
+{{ with $img }}
+  {{ $res := resources.Get . }}
+  {{ if $res }}
+    {{ $thumb := $res.Fill (printf "%dx%d Center" $w $h) }}
+    {{ $imgURL = $thumb.RelPermalink }}
+  {{ else }}
+    {{ $imgURL = . }}
   {{ end }}
-  
-  <article class="product-single container">
-    <p class="back-link"><a href="/products/">← Back to products</a></p>
-    
+{{ end }}
+
+{{- $priceCents := int ($p.price | default 0) -}}
+{{- $priceDisplay := printf "$%.2f" (div (float $priceCents) 100.0) -}}
+{{- $bundleItems := slice (dict
+  "sku" $p.sku
+  "qty" 1
+  "title" $p.title
+  "price_cents" $priceCents
+  "image" $imgURL
+) -}}
+
+<div class="container">
+  <p class="back-link"><a href="/products/">← Back to products</a></p>
+
+  <article class="product-single">
     <div class="product-single__layout">
       <div class="product-single__media">
-        {{ if $image }}
-          <img src="{{ $image }}" alt="{{ $title }}">
-        {{ else }}
-          <div class="product-single__placeholder">{{ $title }}</div>
+        {{ range $p.images }}
+          {{ $res := resources.Get . }}
+          {{ if $res }}
+            {{ $thumb := $res.Fill (printf "%dx%d Center" $w $h) }}
+            <img src="{{ $thumb.RelPermalink }}" width="{{ $w }}" height="{{ $h }}" alt="{{ $p.title }}">
+          {{ else }}
+            <img src="{{ . }}" alt="{{ $p.title }}">
+          {{ end }}
         {{ end }}
       </div>
-      
+
       <div class="product-single__info">
-        <h1>{{ $title }}</h1>
-        
-        <div class="product-single__price">
-          {{ if eq $priceCents 0 }}
-            <span class="price">Free</span>
-          {{ else }}
-            <span class="price">${{ printf "%.2f" (div (float $priceCents) 100.0) }}</span>
-          {{ end }}
-        </div>
-        
-        {{ with $product.short }}
-          <p class="product-single__short">{{ . }}</p>
+        <p class="sku">SKU: {{ $p.sku }}</p>
+        <h1>{{ $p.title }}</h1>
+        <p class="product-single__short">{{ or .Params.description $p.short }}</p>
+
+        {{ with $p.features }}
+          <ul class="product-single__features">
+            {{ range . }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
         {{ end }}
-        
-        {{ if site.Params.selling }}
-          <div class="product-single__actions">
-            <button class="buy-button" 
-                    data-add-to-cart 
-                    data-sku="{{ $product.sku }}"
-                    data-title="{{ $title }}"
-                    data-price-cents="{{ $priceCents }}"
-                    data-qty="1">
-              Add to Cart
-            </button>
-            <a href="/checkout/" class="btn btn-secondary">Go to Checkout</a>
+
+        <p class="price" data-price-cents="{{ $priceCents }}">
+          <span class="price__current">{{ $priceDisplay }}</span>
+        </p>
+
+        {{ if .Site.Params.selling }}
+          <div id="cart-action-row-{{ $p.sku }}" class="product-add-control">
+            <div class="bundle-control bundle-control--compact" 
+                 data-bundle-control
+                 data-bundle-items='{{ $bundleItems | jsonify }}'
+                 data-label-add="Add to cart"
+                 data-label-checkout="Go to checkout"
+                 data-href-checkout="/cart/">
+              <button type="button" class="buy-button" data-bundle-plus>Add to cart</button>
+              <span class="bundle-status" data-bundle-status>Not in cart yet</span>
+            </div>
           </div>
+        {{ else }}
+          <a class="btn" aria-disabled="true">Coming Soon</a>
         {{ end }}
-        
-        {{ with $product.features }}
-          <div class="product-single__features">
-            <h3>Features</h3>
-            <ul>
-              {{ range . }}
-                <li>{{ . }}</li>
-              {{ end }}
-            </ul>
-          </div>
-        {{ end }}
-        
-        {{ with $product.customizations }}
+
+        {{ with $p.customizations }}
           <div class="product-single__customizations">
             <h3>Important Notes</h3>
             {{ range . }}
@@ -77,10 +87,84 @@
         {{ end }}
       </div>
     </div>
-    
+
     <div class="product-single__content">
       {{ .Content }}
     </div>
   </article>
-{{ end }}
+</div>
+
+<script>
+(function(){
+  const API_BASE = (window.GSG_CONFIG && window.GSG_CONFIG.API_BASE) || "https://api.gsgmfg.com";
+  const sku = "{{ $p.sku }}";
+  const bundleControl = document.querySelector("[data-bundle-control]");
+  
+  function formatMoney(cents){
+    return "$" + (Number(cents || 0) / 100).toFixed(2);
+  }
+
+  function updateCartState(state){
+    if (!bundleControl) return;
+    const items = (state && Array.isArray(state.items)) ? state.items : [];
+    const match = items.find((item) => item && item.sku === sku);
+    const qty = Number(match && match.qty || 0);
+    const inCart = qty > 0;
+    
+    const plusBtn = bundleControl.querySelector("[data-bundle-plus]");
+    const statusEl = bundleControl.querySelector("[data-bundle-status]");
+    
+    if (inCart) {
+      if (plusBtn) {
+        plusBtn.textContent = "+";
+        plusBtn.classList.add("qty-btn");
+      }
+      if (statusEl) statusEl.textContent = qty + " in cart";
+      bundleControl.setAttribute("data-bundle-state", "active");
+    } else {
+      if (plusBtn) {
+        plusBtn.textContent = bundleControl.getAttribute("data-label-add") || "Add to cart";
+        plusBtn.classList.remove("qty-btn");
+      }
+      if (statusEl) statusEl.textContent = "Not in cart yet";
+      bundleControl.setAttribute("data-bundle-state", "empty");
+    }
+  }
+
+  // Initialize bundle button
+  if (bundleControl) {
+    const plusBtn = bundleControl.querySelector("[data-bundle-plus]");
+    if (plusBtn) {
+      plusBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        if (!window.GSGCart) return;
+        
+        const items = JSON.parse(bundleControl.getAttribute("data-bundle-items") || "[]");
+        if (!items.length) return;
+        
+        const item = items[0];
+        const currentQty = window.GSGCart.get().items.find(i => i.sku === item.sku)?.qty || 0;
+        
+        window.GSGCart.setQty(item.sku, currentQty + 1, {
+          title: item.title,
+          price_cents: item.price_cents,
+          image: item.image
+        });
+        
+        // Visual feedback
+        const originalText = this.textContent;
+        this.textContent = "Added!";
+        setTimeout(() => {
+          this.textContent = originalText;
+        }, 1000);
+      });
+    }
+  }
+
+  document.addEventListener("cart:updated", (e) => updateCartState(e.detail));
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.GSGCart) updateCartState(window.GSGCart.get());
+  });
+})();
+</script>
 {{ end }}
