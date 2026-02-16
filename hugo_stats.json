@@ -2,10 +2,8 @@
   "htmlElements": {
     "tags": [
       "a",
-      "article",
       "body",
       "br",
-      "button",
       "div",
       "footer",
       "h1",
@@ -14,7 +12,6 @@
       "head",
       "header",
       "html",
-      "img",
       "li",
       "link",
       "main",
@@ -32,10 +29,6 @@
       "ul"
     ],
     "classes": [
-      "back-link",
-      "bundle-control",
-      "bundle-control--compact",
-      "bundle-status",
       "buy-button",
       "container",
       "github-link",
@@ -52,25 +45,9 @@
       "plugin-body",
       "plugin-header",
       "plugin-mockup",
-      "price",
-      "price-note",
-      "price__current",
-      "product-add-control",
-      "product-single",
-      "product-single__content",
-      "product-single__customizations",
-      "product-single__features",
-      "product-single__info",
-      "product-single__layout",
-      "product-single__media",
-      "product-single__short",
-      "sku"
+      "price-note"
     ],
     "ids": [
-      "cart-action-row-PK-CUSTOM-001",
-      "cart-action-row-PK-FREE-001",
-      "cart-action-row-PK-PRO-BASS-001",
-      "cart-action-row-PK-PRO-GTR-001",
       "checkout",
       "contact",
       "delay",
