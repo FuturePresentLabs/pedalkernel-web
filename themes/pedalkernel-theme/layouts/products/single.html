@@ -1,0 +1,145 @@
+{{ define "main" }}
+{{ $slug := .File.ContentBaseName }}
+{{ $p := index site.Data.products $slug }}
+{{ $img := (index $p.images 0) }}
+
+{{ $w := 800 }}
+{{ $h := 533 }}
+
+{{ $imgURL := "" }}
+{{ with $img }}
+  {{ $res := resources.Get . }}
+  {{ if $res }}
+    {{ $thumb := $res.Fill (printf "%dx%d Center" $w $h) }}
+    {{ $imgURL = $thumb.RelPermalink }}
+  {{ else }}
+    {{ $imgURL = . }}
+  {{ end }}
+{{ end }}
+
+{{- $priceCents := int ($p.price | default 0) -}}
+{{- $priceDisplay := printf "$%.2f" (div (float $priceCents) 100.0) -}}
+{{- $bundleItems := slice (dict
+  "sku" $p.sku
+  "qty" 1
+  "title" $p.title
+  "price_cents" $priceCents
+  "image" $imgURL
+) -}}
+
+<div class="container">
+  <p class="back-link"><a href="/products/">← Back to products</a></p>
+
+  <article class="product">
+    {{ if $imgURL }}
+      <div class="gallery">
+        <img src="{{ $imgURL }}" width="{{ $w }}" height="{{ $h }}" alt="{{ $p.title }}">
+      </div>
+    {{ end }}
+
+    <p class="sku">SKU: {{ $p.sku }}</p>
+    <h1>{{ $p.title }}</h1>
+    <p>{{ $p.short }}</p>
+
+    {{ with $p.features }}
+      <ul class="specs">
+        {{ range . }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
+    <p class="price" data-price-cents="{{ $priceCents }}">
+      <span class="price__current">{{ $priceDisplay }}</span>
+    </p>
+
+    {{ if .Site.Params.selling }}
+      <div class="product-add-control">
+        <div class="bundle-control" 
+             data-bundle-control
+             data-bundle-items='{{ $bundleItems | jsonify }}'
+             data-label-add="Add to cart"
+             data-label-checkout="Go to checkout"
+             data-href-checkout="/cart/">
+          <button type="button" class="buy-button" data-bundle-plus>Add to cart</button>
+          <span class="bundle-status" data-bundle-status>Not in cart yet</span>
+        </div>
+      </div>
+    {{ else }}
+      <a class="btn" aria-disabled="true">Coming Soon</a>
+    {{ end }}
+
+    {{ with $p.customizations }}
+      <div class="product-single__customizations">
+        <h3>Important Notes</h3>
+        {{ range . }}
+          <p><strong>{{ .name }}:</strong> {{ .description }}</p>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <div class="product-content">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+
+<script>
+(function(){
+  const sku = "{{ $p.sku }}";
+  const bundleControl = document.querySelector("[data-bundle-control]");
+  
+  function updateCartState(state){
+    if (!bundleControl || !window.GSGCart) return;
+    const items = (state && Array.isArray(state.items)) ? state.items : [];
+    const match = items.find((item) => item && item.sku === sku);
+    const qty = Number(match && match.qty || 0);
+    const inCart = qty > 0;
+    
+    const plusBtn = bundleControl.querySelector("[data-bundle-plus]");
+    const statusEl = bundleControl.querySelector("[data-bundle-status]");
+    
+    if (inCart) {
+      if (plusBtn) plusBtn.textContent = "+";
+      if (statusEl) statusEl.textContent = qty + " in cart";
+    } else {
+      if (plusBtn) plusBtn.textContent = "Add to cart";
+      if (statusEl) statusEl.textContent = "Not in cart yet";
+    }
+  }
+
+  if (bundleControl) {
+    const plusBtn = bundleControl.querySelector("[data-bundle-plus]");
+    if (plusBtn) {
+      plusBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        if (!window.GSGCart) return;
+        
+        const items = JSON.parse(bundleControl.getAttribute("data-bundle-items") || "[]");
+        if (!items.length) return;
+        
+        const item = items[0];
+        const currentQty = window.GSGCart.get().items.find(i => i.sku === item.sku)?.qty || 0;
+        
+        window.GSGCart.setQty(item.sku, currentQty + 1, {
+          title: item.title,
+          price_cents: item.price_cents,
+          image: item.image
+        });
+        
+        const originalText = this.textContent;
+        this.textContent = "Added!";
+        setTimeout(() => {
+          this.textContent = originalText;
+        }, 1000);
+      });
+    }
+  }
+
+  document.addEventListener("cart:updated", (e) => updateCartState(e.detail));
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.GSGCart) updateCartState(window.GSGCart.get());
+  });
+})();
+</script>
+{{ end }}

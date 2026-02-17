@@ -1,0 +1,163 @@
+{{ define "main" }}
+<div class="container">
+  <p class="back-link"><a href="/cart/">← Back to Cart</a></p>
+
+  <h1>Checkout</h1>
+
+  <div id="checkout-root" class="checkout">
+    <div class="checkout-form-wrapper">
+      <div class="checkout-summary-card">
+        <h3>Order Summary</h3>
+        <div class="checkout-items" data-checkout-items></div>
+        <div class="checkout-totals">
+          <div class="total-row"><span>Subtotal</span><span data-subtotal>$0.00</span></div>
+          <div class="total-row grand"><span>Total</span><span data-total>$0.00</span></div>
+        </div>
+      </div>
+
+      <div class="checkout-payment-card">
+        <h3>Payment</h3>
+        
+        <div class="payment-method">
+          <label class="payment-option">
+            <input type="radio" name="paymethod" value="fluidpay_direct" checked>
+            <span>Credit Card (via FluidPay)</span>
+          </label>
+        </div>
+
+        <div class="checkout-fields">
+          <label>
+            Email (for license delivery)
+            <input type="email" id="checkout-email" required placeholder="you@example.com">
+          </label>
+
+          <p class="muted small" style="margin: 1rem 0;">
+            After clicking Pay, you'll be securely redirected to our payment processor to complete your purchase.
+          </p>
+        </div>
+
+        <button type="button" class="buy-button" id="checkout-submit" style="width: 100%; margin-top: 1.5rem;">
+          Pay <span data-pay-total>$0.00</span>
+        </button>
+
+        <p class="checkout-note">
+          You'll receive your license key via email immediately after payment.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const API_BASE = (window.GSG_CONFIG && window.GSG_CONFIG.API_BASE) || "https://api.gsgmfg.com";
+  const money = (cents) => "$" + (Number(cents||0)/100).toFixed(2);
+
+  function getCartLines(){
+    const state = window.GSGCart ? window.GSGCart.get() : { items: [] };
+    return (state.items || []).map(i => ({
+      sku: i.sku,
+      qty: i.qty,
+      price_cents: i.price_cents
+    }));
+  }
+
+  function renderSummary(){
+    const state = window.GSGCart ? window.GSGCart.get() : { items: [] };
+    const items = state.items || [];
+    let totalCents = 0;
+
+    const itemsHtml = items.map(i => {
+      const itemTotal = (i.price_cents || 0) * (i.qty || 1);
+      totalCents += itemTotal;
+      return `
+        <div class="checkout-item">
+          <span>${i.title} x ${i.qty}</span>
+          <span>${money(itemTotal)}</span>
+        </div>
+      `;
+    }).join("");
+
+    document.querySelector("[data-checkout-items]").innerHTML = itemsHtml;
+    document.querySelector("[data-subtotal]").textContent = money(totalCents);
+    document.querySelector("[data-total]").textContent = money(totalCents);
+    document.querySelector("[data-pay-total]").textContent = money(totalCents);
+
+    return totalCents;
+  }
+
+  async function createInvoice(){
+    const email = document.getElementById("checkout-email")?.value?.trim();
+    const submitBtn = document.getElementById("checkout-submit");
+
+    if (!email || !email.includes("@")) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    const cartLines = getCartLines();
+    if (!cartLines.length) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Processing...";
+
+    try {
+      const response = await fetch(`${API_BASE}/invoices`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Idempotency-Key": Math.random().toString(36).substring(2)
+        },
+        body: JSON.stringify({
+          payment_method: "fluidpay_direct",
+          currency: "USD",
+          email: email,
+          cart: cartLines,
+          storefront: window.GSG_CONFIG?.storefront || "pedalkernel",
+          redirect_url: window.location.origin + "/success/"
+        })
+      });
+
+      if (!response.ok) {
+        const err = await response.text();
+        throw new Error(err || "Failed to create invoice");
+      }
+
+      const invoice = await response.json();
+
+      if (invoice.checkout_url || invoice.payment_url) {
+        window.location.href = invoice.checkout_url || invoice.payment_url;
+      } else {
+        window.location.href = `/success/?order=${invoice.order_id}`;
+      }
+
+    } catch (error) {
+      console.error("Checkout error:", error);
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Try Again";
+      alert("Payment processing failed. Please try again or contact hello@pedalkernel.com");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!window.GSGCart) {
+      document.getElementById("checkout-root").innerHTML = 
+        '<p>Checkout unavailable. Please refresh and try again.</p>';
+      return;
+    }
+
+    const state = window.GSGCart.get();
+    if (!state.items || !state.items.length) {
+      window.location.href = "/cart/";
+      return;
+    }
+
+    renderSummary();
+    document.getElementById("checkout-submit")?.addEventListener("click", createInvoice);
+  });
+})();
+</script>
+{{ end }}

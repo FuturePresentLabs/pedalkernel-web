@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="container">
+  <div class="success-page">
+    <h1>Thank You!</h1>
+    
+    <div class="success-content">
+      <p class="success-message">Your purchase is complete.</p>
+      
+      <div class="order-details" id="order-details">
+        <p>Order ID: <strong id="order-id">—</strong></p>
+        <p>Status: <span class="status-badge">Processing</span></p>
+      </div>
+
+      <div class="next-steps">
+        <h3>What's Next</h3>
+        <ol>
+          <li>Check your email for your license key</li>
+          <li>Download the plugin from the link in that email</li>
+          <li>Install in your DAW's VST3 folder</li>
+          <li>Activate with your license key</li>
+        </ol>
+      </div>
+
+      <div class="support-note">
+        <p>Questions? Email us at <a href="mailto:hello@pedalkernel.com">hello@pedalkernel.com</a></p>
+        <p><small>We're a small team in Seattle — we might not reply instantly, but we will reply.</small></p>
+      </div>
+
+      <div class="success-actions">
+        <a href="/products/" class="btn btn-secondary">Browse More Products</a>
+        <a href="/" class="buy-button">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const orderId = params.get("order");
+  
+  if (orderId) {
+    document.getElementById("order-id").textContent = orderId;
+  }
+
+  if (window.GSGCart && typeof window.GSGCart.clear === "function") {
+    window.GSGCart.clear();
+  }
+})();
+</script>
+{{ end }}
