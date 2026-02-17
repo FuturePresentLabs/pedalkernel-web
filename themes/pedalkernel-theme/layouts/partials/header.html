@@ -1,12 +1,12 @@
 <header>
   <div class="container">
-    <a href="/" class="logo">PedalKernel <span>Pro</span></a>
+    <a href="/" class="logo">PedalKernel{{ if or (eq .Page.RelPermalink "/pro/") (eq .Page.RelPermalink "/products/") (eq .Page.RelPermalink "/cart/") (eq .Page.RelPermalink "/checkout/") }} <span>Pro</span>{{ end }}</a>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
+        <li><a href="/pro/">Pro</a></li>
         <li><a href="/products/">Products</a></li>
-        <li><a href="/cart/">Cart</a></li>
-        <li><a href="/checkout/">Checkout</a></li>
+        <li><a href="https://github.com/ajmwagar/pedalkernel">GitHub</a></li>
       </ul>
     </nav>
   </div>

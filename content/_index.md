@@ -1,90 +1,116 @@
 ---
-title: "PedalKernel Pro"
-description: "Wave Digital Filter guitar effects software, made in Seattle"
+title: "PedalKernel"
+description: "Open source Wave Digital Filter framework for guitar effects, written in Rust"
 ---
 
-{{< hero >}}
+{{< hero-os >}}
 
-## What is it?
+## What is PedalKernel?
 
-PedalKernel Pro is a VST3 plugin built on a **Wave Digital Filter (WDF) framework** written in Rust.
+PedalKernel is an **open source Wave Digital Filter (WDF) framework** written in Rust for modeling analog guitar effects circuits.
 
-Instead of approximating how pedals sound, we model how they actually work at the circuit level. Resistors, capacitors, germanium transistors — all the physical components that create "that sound" — simulated with mathematical precision.
+We're not a company. We're not selling anything. We're just a group of engineers and musicians who think digital guitar effects should actually understand how analog circuits work.
 
-**Why WDF?**
+## Why Wave Digital Filters?
 
-- **Physical accuracy** — Models actual circuit behavior, not approximations
-- **Stability** — Guaranteed stable under all conditions (won't blow up your mix)
-- **Modularity** — Circuit elements connect like building blocks
-- **Real-time safe** — Zero-allocation audio processing, no garbage collection pauses
+Most digital pedal plugins approximate the sound. They feed a signal through wavetables or impulse responses and call it "modeling."
 
-The same techniques used in academic research and high-end hardware modeling, now in a plugin you can actually afford.
+WDF is different. It simulates the actual circuit — resistors, capacitors, op-amps, transistors — at the component level. The math preserves the physical relationships between elements, which means:
+
+- **Dynamic response** — The circuit behaves differently at different volumes, just like the real thing
+- **Interactive controls** — Turning a knob affects the signal path in realistic ways
+- **Non-linear behavior** — Saturation, clipping, and feedback happen naturally
+- **Stability** — Guaranteed stable under all conditions (unlike some other circuit simulation methods)
+
+## The Tech
+
+### Rust
+Memory-safe systems programming with zero-allocation audio paths. No garbage collection pauses. Real-time safe by design.
+
+### Wave Digital Filters
+A port-Hamiltonian approach to circuit simulation. Instead of solving Kirchhoff's laws directly, WDF uses scattering parameters to propagate waves through the circuit. It's the same math used in high-end hardware modeling, academic research, and RF engineering.
+
+### Composable Trees
+Circuits are built as trees of WDF elements:
+- **Leaves** — Resistors, capacitors, inductors, voltage sources
+- **Adaptors** — Series and parallel connection topologies  
+- **Root** — The driving point where waves are reflected back into the circuit
+
+Want to add a tone stack? Insert a subtree. Want to swap clipping diodes? Replace one leaf. The framework handles the topology automatically.
 
 ## The Circuits
 
-Three classics, modeled component-by-component:
+We're building reference implementations of classic pedal circuits:
 
 ### Overdrive
-Tube Screamer-style soft clipping. The mid-hump that cuts through a mix, the smooth saturation that responds to your picking dynamics. We modeled the op-amp, the diodes, the tone stack — the whole signal path.
+Tube Screamer-style soft clipping. JFET input buffer, dual op-amp gain stage, diode clipper, tone stack. We model every component, including the op-amp's slew rate limitations.
 
 ### FuzzFace  
-Germanium fuzz with the harsh, splattery breakup that defined 60s rock. The temperamental transistors that change character as they warm up. We captured that instability and made it musical.
+Germanium fuzz with all the instability that makes it musical. Temperature-dependent transistor behavior, leakage currents, the way the bias drifts as the device warms up. It's temperamental, just like the originals.
 
 ### Delay
-Analog-style bucket-brigade delay. The degradation, the clock noise, the way repeats darken and dissolve. Digital delay that actually sounds analog.
+Analog bucket-brigade delay simulation. Clock noise, aliasing, the degradation of repeats as they circulate through the delay line. Digital delay that actually sounds analog.
 
-## Under the Hood
+## Open Source
 
-Built in **Rust** for memory safety without garbage collection. JACK audio integration for pro-level latency. Composable circuit trees mean we can build complex circuits from simple primitives.
+The kernel is licensed MIT. Use it for whatever you want. Build a commercial plugin. Build a hardware DSP box. Build a web-based guitar pedal simulator. Just don't blame us if you blow up your speakers.
 
-If you're the type who reads schematic diagrams for fun, check out the [open source kernel](https://github.com/ajmwagar/pedalkernel). The framework is there — build your own effects, contribute circuits, or just see how it works.
+**[github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel)**
+
+### Contributing
+
+We need help with:
+- More circuit element models (vacuum tubes, transformers, varistors)
+- Additional pedal implementations (phaser, chorus, reverb, wah)
+- Performance optimizations (SIMD, parallel trees)
+- Better documentation (tutorials, theory explainers)
+- Platform ports (LV2, AU, CLAP plugin formats)
+
+If you understand schematics and know some Rust, jump in.
+
+## The Pro Plugin
+
+We also build a commercial VST3 plugin called **PedalKernel Pro**. It's built on this same open source kernel, but with a polished UI, more effects, and professional support.
+
+If you want to support the project (or just don't want to compile Rust code), [check it out](/pro/).
+
+## Physical Pedals
+
+Our circuit designs are being turned into physical pedals by **[Puget Audio](https://puget.audio/)** — a boutique builder here in Seattle. Same math, same component values, but with actual solder and metal boxes.
+
+If you want a PedalKernel circuit you can stomp on, [check them out](https://puget.audio/).
 
 ## Made in Seattle
 
 We're based in Seattle, Washington — home of Jimi Hendrix, Nirvana, Soundgarden, and countless other musicians who cared deeply about tone.
 
-This city has a long history of sonic experimentation. We're just carrying that forward into the digital realm.
-
-## Physical Pedals: The Puget Audio Partnership
-
-Software is our focus, but we know some of you want the real thing. That's why we've partnered with **[Puget Audio](https://puget.audio/)** — a boutique pedal builder here in Seattle.
-
-They take our WDF circuit designs and turn them into physical pedals. Same math, same component values, but with actual solder and metal boxes. Hand-wired, laser-engraved, built to last.
-
-If you want a PedalKernel circuit in physical form, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
-
-## Pricing
-
-**$49** — one time, no subscription.
-
-VST3 for macOS, Windows, and Linux. 3 device activations. All future updates free.
-
-[Buy PedalKernel Pro →](/checkout/)
+This city has a long history of sonic experimentation. We're just carrying that forward into the open source realm.
 
 ## FAQ
 
-**Q: Is this a subscription?**  
-A: No. Buy once, keep forever.
+**Q: Is PedalKernel really free?**  
+A: Yes. MIT licensed. Use it however you want.
 
-**Q: What makes WDF better than other modeling techniques?**  
-A: WDF preserves the physical relationships between circuit components. Other methods approximate the input/output behavior. WDF simulates the actual circuit. The difference is subtle but real — better dynamic response, more realistic interaction between controls.
+**Q: Can I use this in a commercial product?**  
+A: Yes. That's the point of MIT. Just include the license.
 
-**Q: What formats?**  
-A: VST3 for macOS, Windows, and Linux.
+**Q: Do I need to know Rust?**  
+A: To hack on the kernel, yes. To just use the plugin, no.
 
-**Q: Do you offer refunds?**  
-A: Yes, 30 days. If it doesn't work for you, we'll refund no questions asked.
+**Q: How accurate is the modeling?**  
+A: It depends on how well we characterized the original circuit. The WDF math itself is exact — the accuracy is limited by component tolerances and how well we measured the original.
 
-**Q: Can I get these circuits as physical pedals?**  
-A: Yes — our partner [Puget Audio](https://puget.audio/) builds physical versions of our circuits. Hand-wired, boutique quality.
+**Q: Can I contribute a circuit?**  
+A: Please do. Trace a schematic, build a WDF tree, send a PR. We'll help you get it merged.
 
-**Q: Can I hack on this?**  
-A: The kernel is open source at [github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel). The plugin is built on top of it. If you want to understand how WDF works or build your own circuits, start there.
+**Q: What's the difference between the open source kernel and PedalKernel Pro?**  
+A: The kernel is the engine. Pro is a car built on that engine — polished UI, more effects, professional support, and you don't have to compile anything.
 
 ## Contact
 
-Questions? Ideas? Want to talk about germanium transistor matching?
+Questions? Ideas? Want to talk about scattering parameters?
 
-Email us: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
+- GitHub Issues: [github.com/ajmwagar/pedalkernel/issues](https://github.com/ajmwagar/pedalkernel/issues)
+- Email: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
 
 Built with care in the Pacific Northwest.

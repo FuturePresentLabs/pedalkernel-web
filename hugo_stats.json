@@ -49,22 +49,32 @@
     ],
     "ids": [
       "checkout",
+      "composable-trees",
       "contact",
+      "contributing",
       "delay",
       "faq",
       "fuzzface",
       "made-in-seattle",
       "main-content",
       "need-help",
+      "open-source",
       "overdrive",
+      "physical-pedals",
       "physical-pedals-the-puget-audio-partnership",
       "pricing",
+      "rust",
       "shopping-cart",
       "thank-you",
       "the-circuits",
+      "the-pro-plugin",
+      "the-tech",
       "under-the-hood",
+      "wave-digital-filters",
       "what-happens-next",
-      "what-is-it"
+      "what-is-it",
+      "what-is-pedalkernel",
+      "why-wave-digital-filters"
     ]
   }
 }
