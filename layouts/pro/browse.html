@@ -1,0 +1,102 @@
+{{ define "main" }}
+<main class="page-content">
+  <div class="container">
+    <h2>Browse everything included in Pro</h2>
+
+    <p>This page lists all pedals and boards included in PedalKernel Pro.</p>
+    <ul>
+      <li><strong>Pedals</strong>: name, knob labels, and a short story</li>
+      <li><strong>Boards</strong>: name and a short story</li>
+    </ul>
+
+    <p>(Visuals are coming next — this page is built to add them without changing the data model.)</p>
+
+    <div id="pk-browse" data-pk-browse>
+      <p>Loading catalog…</p>
+    </div>
+
+    <script>
+    (function() {
+      async function load() {
+        const mount = document.querySelector('[data-pk-browse]');
+        if (!mount) return;
+
+        const res = await fetch('/pk/catalog-manifest.json', { cache: 'no-store' });
+        if (!res.ok) {
+          mount.innerHTML = '<p>Could not load catalog manifest.</p>';
+          return;
+        }
+        const data = await res.json();
+
+        const pedals = (data.pedals || []).slice().sort((a,b) => (a.type||'').localeCompare(b.type||'') || (a.name||'').localeCompare(b.name||''));
+        const boards = (data.boards || []).slice().sort((a,b) => (a.genre||'').localeCompare(b.genre||'') || (a.name||'').localeCompare(b.name||''));
+
+        function esc(s){
+          return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+
+        function groupBy(items, key) {
+          const m = new Map();
+          for (const it of items) {
+            const k = (it[key] || 'misc').toString();
+            if (!m.has(k)) m.set(k, []);
+            m.get(k).push(it);
+          }
+          return m;
+        }
+
+        const pedalGroups = groupBy(pedals, 'type');
+        const boardGroups = groupBy(boards, 'genre');
+
+        let html = '';
+
+        html += '<h2>Pedals</h2>';
+        for (const [type, items] of Array.from(pedalGroups.entries()).sort((a,b)=>a[0].localeCompare(b[0]))) {
+          html += `<h3>${esc(type)}</h3>`;
+          html += '<div class="pk-grid">';
+          for (const p of items) {
+            const knobs = (p.knobs || []).map(esc).join(', ');
+            html += '<div class="pk-card">';
+            html += `<div class="pk-card-title">${esc(p.name)}</div>`;
+            if (knobs) html += `<div class="pk-card-sub"><strong>Knobs:</strong> ${knobs}</div>`;
+            if (p.story) html += `<div class="pk-card-story">${esc(p.story)}</div>`;
+            html += '</div>';
+          }
+          html += '</div>';
+        }
+
+        html += '<h2>Boards</h2>';
+        for (const [genre, items] of Array.from(boardGroups.entries()).sort((a,b)=>a[0].localeCompare(b[0]))) {
+          html += `<h3>${esc(genre)}</h3>`;
+          html += '<div class="pk-grid">';
+          for (const b of items) {
+            html += '<div class="pk-card">';
+            html += `<div class="pk-card-title">${esc(b.name)}</div>`;
+            if (b.story) html += `<div class="pk-card-story">${esc(b.story)}</div>`;
+            html += '</div>';
+          }
+          html += '</div>';
+        }
+
+        html += '<style>';
+        html += '.pk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:12px 0 24px;}';
+        html += '.pk-card{border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px;background:rgba(0,0,0,0.15);}';
+        html += '.pk-card-title{font-weight:700;margin-bottom:6px;}';
+        html += '.pk-card-sub{font-size:0.92em;opacity:0.9;margin-bottom:6px;}';
+        html += '.pk-card-story{opacity:0.92;line-height:1.35;}';
+        html += '</style>';
+
+        mount.innerHTML = html;
+      }
+
+      load().catch(err => {
+        const mount = document.querySelector('[data-pk-browse]');
+        if (mount) mount.innerHTML = '<p>Error loading catalog.</p>';
+        console.error(err);
+      });
+    })();
+    </script>
+
+  </div>
+</main>
+{{ end }}
