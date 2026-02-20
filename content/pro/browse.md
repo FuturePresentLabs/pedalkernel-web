@@ -16,6 +16,7 @@ This page is generated from the PedalKernel Pro catalog manifest.
   <p>Loading catalog…</p>
 </div>
 
+{{< rawhtml >}}
 <script>
 (function() {
   async function load() {
@@ -97,3 +98,4 @@ This page is generated from the PedalKernel Pro catalog manifest.
   });
 })();
 </script>
+{{< /rawhtml >}}
