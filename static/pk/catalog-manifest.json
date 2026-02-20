@@ -1,0 +1,431 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-02-20T06:56:15.617103Z",
+  "pedals": [
+    {
+      "id": "vox_ac15_normal",
+      "name": "Vox AC15 Normal",
+      "type": "amp",
+      "story": "Vox AC15 Normal \u2014 A classic Vox-style clean-to-crunch amp voice: bright, chiming mids with that tight low end. Great as a \u2018platform\u2019 at the end of a board\u2014push it with drives and it bites back without getting flubby. Vox AC15 Normal Channel \u2014 Pro Full amp model: EF86 pentode preamp \u2192 12AX7 driver \u2192 FX loop \u2192 12AX7 cathodyne phase inverter \u2192 EL84 Class A power \u2192 output transformer The Normal channel (not Top Boost) \u2014 warmer, less trebly, pairs beautifully with humbuckers. Adds chime and harmonic complexity without harshness. fx_send / fx_return mark the preamp/power amp boundary for FX loop insertion. Component values match the original 1960 AC15 schematic.",
+      "knobs": [
+        "Volume",
+        "Cut",
+        "Master"
+      ],
+      "path": "pedals/amp/vox_ac15_normal.pedal",
+      "visual": {
+        "bg1x": "images/pedals/vox_ac15_normal_bg.png",
+        "bg2x": "images/pedals/vox_ac15_normal_bg@2x.png"
+      }
+    },
+    {
+      "id": "ce2_chorus",
+      "name": "Boss CE-2 Chorus",
+      "type": "chorus",
+      "story": "Boss CE-2 Chorus \u2014 Warm, liquid BBD chorus with the subtle wobble that makes clean parts feel wide without sounding \u2018effecty\u2019. Use it slow for shimmer, faster for 80s motion. Boss CE-2 Chorus (Pro) Classic analog chorus using MN3207 BBD delay line LFO modulates the BBD clock for time-varying delay (chorus effect) TL072 op-amp input buffer, triangle LFO, proper wet/dry mix Depth knob scales LFO modulation amount via series resistor",
+      "knobs": [
+        "Rate",
+        "Depth"
+      ],
+      "path": "pedals/chorus/ce2_chorus.pedal",
+      "visual": {
+        "bg1x": "images/pedals/ce2_chorus_bg.png",
+        "bg2x": "images/pedals/ce2_chorus_bg@2x.png"
+      }
+    },
+    {
+      "id": "keeley_compressor_plus",
+      "name": "Keeley Compressor Plus",
+      "type": "compressor",
+      "story": "Keeley Compressor Plus \u2014 A musical compressor for evening out pick attack without killing dynamics. Dial it for country snap, funk consistency, or just \u2018make it feel like a record\u2019 sustain. Keeley Compressor Plus \u2014 Pro Modified Ross/Dyna Comp topology with attack and blend controls CA3080 OTA (operational transconductance amplifier) for smooth compression Envelope follower drives the OTA's gain control current Blend pot crossfades dry/compressed for parallel compression",
+      "knobs": [
+        "Sustain",
+        "Level",
+        "Attack",
+        "Blend"
+      ],
+      "path": "pedals/compressor/keeley_compressor_plus.pedal",
+      "visual": {
+        "bg1x": "images/pedals/keeley_compressor_plus_bg.png",
+        "bg2x": "images/pedals/keeley_compressor_plus_bg@2x.png"
+      }
+    },
+    {
+      "id": "boss_dm2_delay",
+      "name": "Boss DM-2 Delay",
+      "type": "delay",
+      "story": "Boss DM-2 Delay \u2014 Analog BBD-style delay: dark repeats, gentle smear, and that satisfying decay into noise. Perfect for slapback, dotted-eighths, or ambient trails that don\u2019t fight the dry signal. Boss DM-2 Analog Delay \u2014 Pro MN3005 BBD-based warm analog delay The DM-2 uses a 4096-stage BBD for long delay times Anti-alias and reconstruction filters tame clock noise Feedback loop with coupling cap for repeats",
+      "knobs": [
+        "Time",
+        "Repeats",
+        "Mix"
+      ],
+      "path": "pedals/delay/boss_dm2_delay.pedal",
+      "visual": {
+        "bg1x": "images/pedals/boss_dm2_delay_bg.png",
+        "bg2x": "images/pedals/boss_dm2_delay_bg@2x.png"
+      }
+    },
+    {
+      "id": "noise_gate",
+      "name": "Noise Gate",
+      "type": "gate",
+      "story": "Noise Gate \u2014 A practical noise gate to clamp hiss and high-gain rumble between notes. Set it as lightly as possible\u2014just enough to clean up pauses without choking sustain. Optical Noise Gate \u2014 Pro Envelope follower detects signal level and drives a photocoupler (VTL5C1) When signal drops below threshold, the LDR goes high-impedance and blocks signal VTL5C1: fast 50ms release, r_dark=600k, r_light=600 ohm \u2014 tight gating Attack 1ms / Release 80ms \u2014 fast open, moderate close to avoid chatter",
+      "knobs": [
+        "Threshold"
+      ],
+      "path": "pedals/gate/noise_gate.pedal",
+      "visual": {
+        "bg1x": "images/pedals/noise_gate_bg.png",
+        "bg2x": "images/pedals/noise_gate_bg@2x.png"
+      }
+    },
+    {
+      "id": "eqd_plumes",
+      "name": "EQD Plumes",
+      "type": "overdrive",
+      "story": "EQD Plumes \u2014 TS-style drive with a more open top end and LED-style bite. Great for pushing an amp, stacking into another overdrive, or tightening the low end for modern rhythm. --- pk: schema: 1 kind: pedal id: eqd_plumes name: \"EQD Plumes\" vendor: \"EarthQuaker Devices\" model: \"Plumes\" type: overdrive subtype: \"ts-style\" summary: \"Tube Screamer-inspired overdrive with LED clipping for higher headroom\" tags: [ts-style, led-clipping, mid-hump] links: - title: \"Official product page\" url: \"https://www.earthquakerdevices.com/plumes\" controls: - id: Gain label: Gain default: 0.5 range: [0.0, 1.0] - id: Tone label: Tone default: 0.5 range: [0.0, 1.0] - id: Level label: Level default: 0.7 range: [0.0, 1.0] --- EarthQuaker Devices Plumes \u2014 Pro TS-style overdrive with LED clipping for higher headroom Based on the Tube Screamer topology but uses LEDs instead of silicon diodes LEDs have higher forward voltage (~1.8V vs ~0.6V) = more headroom, more open dynamics Anti-parallel LED diodes in feedback loop (soft clipping)",
+      "knobs": [
+        "Gain",
+        "Tone",
+        "Level"
+      ],
+      "path": "pedals/overdrive/eqd_plumes.pedal",
+      "visual": {
+        "bg1x": "images/pedals/eqd_plumes_bg.png",
+        "bg2x": "images/pedals/eqd_plumes_bg@2x.png"
+      }
+    },
+    {
+      "id": "fulltone_ocd",
+      "name": "Fulltone OCD",
+      "type": "overdrive",
+      "story": "Fulltone OCD \u2014 A punchy MOSFET-style overdrive with amp-like feel\u2014wide bandwidth, strong pick response, and a satisfying \u2018crunch\u2019 when you dig in. Fulltone OCD (Obsessive Compulsive Drive) V1.7 \u2014 Pro MOSFET-based overdrive/distortion with amp-like transparency Uses 2N7000 MOSFET pair for clipping (the OCD's signature) JFET input buffer, op-amp gain stage, MOSFET clipping to ground HP/LP toggle modeled as tone control position",
+      "knobs": [
+        "Drive",
+        "Tone",
+        "Volume"
+      ],
+      "path": "pedals/overdrive/fulltone_ocd.pedal",
+      "visual": {
+        "bg1x": "images/pedals/fulltone_ocd_bg.png",
+        "bg2x": "images/pedals/fulltone_ocd_bg@2x.png"
+      }
+    },
+    {
+      "id": "klon_centaur",
+      "name": "Klon Centaur",
+      "type": "overdrive",
+      "story": "Klon Centaur \u2014 The transparent drive: keeps your core tone, adds harmonic sheen, and pushes mids in a flattering way. Ideal as an always-on sweetener or a clean boost into an already-breaking amp. Klon Centaur Professional Overdrive (1994) \u2014 Pro Bill Finnegan's legendary \"transparent\" overdrive TL072 dual op-amp with germanium diodes in anti-parallel in feedback loop Unique gain/clean blend architecture with charge pump headroom",
+      "knobs": [
+        "Gain",
+        "Treble",
+        "Output"
+      ],
+      "path": "pedals/overdrive/klon_centaur.pedal",
+      "visual": {
+        "bg1x": "images/pedals/klon_centaur_bg.png",
+        "bg2x": "images/pedals/klon_centaur_bg@2x.png"
+      }
+    },
+    {
+      "id": "morning_glory",
+      "name": "JHS Morning Glory",
+      "type": "overdrive",
+      "story": "JHS Morning Glory \u2014 Bluesbreaker-flavored overdrive\u2014low to mid gain, smooth compression, and a polished top end. It\u2019s the \u2018edge of breakup\u2019 sound in a box. JHS Morning Glory \u2014 Pro Marshall Bluesbreaker-style transparent overdrive Dual op-amp circuit with soft clipping diodes in anti-parallel in feedback loop Known for touch-sensitive, amp-like breakup that cleans up with guitar volume",
+      "knobs": [
+        "Gain",
+        "Tone",
+        "Volume"
+      ],
+      "path": "pedals/overdrive/morning_glory.pedal",
+      "visual": {
+        "bg1x": "images/pedals/morning_glory_bg.png",
+        "bg2x": "images/pedals/morning_glory_bg@2x.png"
+      }
+    },
+    {
+      "id": "ts808_tubescreamer",
+      "name": "Ibanez TS808",
+      "type": "overdrive",
+      "story": "Ibanez TS808 \u2014 The archetypal mid-hump overdrive: soft clipping, tightened bass, and a focused EQ that helps leads sit in a mix and makes high-gain amps feel tighter. Ibanez TS808 Tube Screamer (Original 1979) \u2014 Pro JRC4558D dual op-amp with symmetric soft clipping in feedback loop Famous for the \"mid-hump\" EQ and smooth, compressed overdrive Key: Diodes are in the FEEDBACK loop (soft clipping), not to ground",
+      "knobs": [
+        "Drive",
+        "Tone",
+        "Level"
+      ],
+      "path": "pedals/overdrive/ts808_tubescreamer.pedal",
+      "visual": {
+        "bg1x": "images/pedals/ts808_tubescreamer_bg.png",
+        "bg2x": "images/pedals/ts808_tubescreamer_bg@2x.png"
+      }
+    },
+    {
+      "id": "tumnus",
+      "name": "Wampler Tumnus",
+      "type": "overdrive",
+      "story": "Wampler Tumnus \u2014 A compact Klon-inspired drive with a bit more modern clarity. Use it to add presence and push, especially when stacking into other gain stages. Wampler Tumnus \u2014 Pro Modern Klon-inspired transparent overdrive Same topology as Klon Centaur but with silicon diodes for consistency Clean/dirty blend architecture, active treble EQ",
+      "knobs": [
+        "Gain",
+        "Tone",
+        "Level"
+      ],
+      "path": "pedals/overdrive/tumnus.pedal",
+      "visual": {
+        "bg1x": "images/pedals/tumnus_bg.png",
+        "bg2x": "images/pedals/tumnus_bg@2x.png"
+      }
+    },
+    {
+      "id": "phase90",
+      "name": "MXR Phase 90",
+      "type": "phaser",
+      "story": "MXR Phase 90 \u2014 A four-stage phaser with that chewy sweep\u2014subtle at low rates, psychedelic at higher settings. Great for single notes, chords, and classic rock motion. MXR Phase 90 \u2014 Pro 4-stage JFET allpass phaser with single speed control Four J201 N-channel JFETs as variable resistors in RC allpass networks Swept by triangle LFO for classic slow, romantic phaser sound",
+      "knobs": [
+        "Speed"
+      ],
+      "path": "pedals/phaser/phase90.pedal",
+      "visual": {
+        "bg1x": "images/pedals/phase90_bg.png",
+        "bg2x": "images/pedals/phase90_bg@2x.png"
+      }
+    },
+    {
+      "id": "univibe",
+      "name": "Uni-Vibe",
+      "type": "phaser",
+      "story": "Uni-Vibe \u2014 Swirly photocell vibe with a deep, pulsing throb. It\u2019s chorus-adjacent but more organic\u2014perfect for Hendrix flavors and slow, seasick movement. Shin-Ei Uni-Vibe \u2014 Pro 4-stage JFET phaser with staggered caps for non-uniform phase shifts The Uni-Vibe's unique character comes from the staggered capacitor values (15n, 22n, 47n, 100n) which create an uneven, chorus-like phasing effect LFO through depth control, with chorus/vibrato mix for dry blend",
+      "knobs": [
+        "Speed",
+        "Depth",
+        "Chorus/Vibrato",
+        "Volume"
+      ],
+      "path": "pedals/phaser/univibe.pedal",
+      "visual": {
+        "bg1x": "images/pedals/univibe_bg.png",
+        "bg2x": "images/pedals/univibe_bg@2x.png"
+      }
+    },
+    {
+      "id": "walrus_slo_reverb",
+      "name": "Walrus Audio Slo",
+      "type": "reverb",
+      "story": "Walrus Audio Slo \u2014 Dreamy, modulated reverb textures designed for ambient playing. Big tails, movement, and \u2018pad-like\u2019 sustain for swells, post-rock, and cinematic washes. Walrus Audio Slo \u2014 Pro Multi-texture ambient reverb using BBD delay network MN3005 BBD (4096 stages) provides the reverb delay Heavy feedback loop for sustain/decay with filtering for progressive darkening Subtle LFO modulation on BBD clock for shimmer",
+      "knobs": [
+        "Sustain",
+        "Filter",
+        "Mix"
+      ],
+      "path": "pedals/reverb/walrus_slo_reverb.pedal",
+      "visual": {
+        "bg1x": "images/pedals/walrus_slo_reverb_bg.png",
+        "bg2x": "images/pedals/walrus_slo_reverb_bg@2x.png"
+      }
+    },
+    {
+      "id": "fender_tremolo",
+      "name": "Fender Tremolo",
+      "type": "tremolo",
+      "story": "Fender Tremolo \u2014 Vintage Fender-style tremolo with smooth amplitude modulation. From gentle shimmer to hard chop, it\u2019s a simple way to add motion that stays musical. Fender Tremolo (Bias-Vary) \u2014 Pro Classic Fender amp-style bias-vary tremolo JFET used as voltage-controlled attenuator LFO modulates JFET vgs to vary signal amplitude Triangle wave for smooth, classic tremolo character",
+      "knobs": [
+        "Speed",
+        "Depth",
+        "Volume"
+      ],
+      "path": "pedals/tremolo/fender_tremolo.pedal",
+      "visual": {
+        "bg1x": "images/pedals/fender_tremolo_bg.png",
+        "bg2x": "images/pedals/fender_tremolo_bg@2x.png"
+      }
+    },
+    {
+      "id": "harmonic_tremolo",
+      "name": "Harmonic Tremolo",
+      "type": "tremolo",
+      "story": "Harmonic Tremolo \u2014 Brownface-style harmonic trem: splits the signal into bands and alternates them for a lush, phasey pulse. It feels like tremolo and phaser had a classy child. Harmonic Tremolo (Brownface Fender Style) \u2014 Pro Dual-band JFET tremolo with anti-phase modulation Splits signal into high/low bands via active crossover Each band is modulated by JFETs in anti-phase (180 degrees apart) When lows are loud, highs are soft and vice versa \u2014 phase-y, lush character",
+      "knobs": [
+        "Speed",
+        "Depth",
+        "Volume"
+      ],
+      "path": "pedals/tremolo/harmonic_tremolo.pedal",
+      "visual": {
+        "bg1x": "images/pedals/harmonic_tremolo_bg.png",
+        "bg2x": "images/pedals/harmonic_tremolo_bg@2x.png"
+      }
+    },
+    {
+      "id": "optical_tremolo",
+      "name": "Optical Tremolo",
+      "type": "tremolo",
+      "story": "Optical Tremolo \u2014 Optical tremolo with a round, lamp-like response\u2014soft edges and a natural bounce. Great for surf, indie, and anything that wants movement without harsh gating. Optical Tremolo (Blackface Fender Style) \u2014 Pro True photocoupler-based tremolo using LED/LDR for soft amplitude modulation The VTL5C3 photocoupler's nonlinear response creates the classic smooth, syrupy character LFO drives the photocoupler LED; signal flows through the LDR",
+      "knobs": [
+        "Speed",
+        "Depth",
+        "Volume"
+      ],
+      "path": "pedals/tremolo/optical_tremolo.pedal",
+      "visual": {
+        "bg1x": "images/pedals/optical_tremolo_bg.png",
+        "bg2x": "images/pedals/optical_tremolo_bg@2x.png"
+      }
+    },
+    {
+      "id": "crybaby_wah",
+      "name": "Dunlop Cry Baby",
+      "type": "wah",
+      "story": "Dunlop Cry Baby \u2014 Classic inductor wah for vocal, resonant sweeps. Use it for funk quack, lead emphasis, or slow filter sweeps for dramatic tone shifts. Dunlop Cry Baby GCB-95 Wah \u2014 Pro NPN transistor gain stage with inductor-based resonant bandpass filter MPSA18 high-gain NPN drives the Fasel inductor + cap resonant circuit Wah pot sweeps the resonant frequency by varying the Q loading The inductor + cap form a tuned circuit; the pot shifts the peak",
+      "knobs": [
+        "Wah"
+      ],
+      "path": "pedals/wah/crybaby_wah.pedal",
+      "visual": {
+        "bg1x": "images/pedals/crybaby_wah_bg.png",
+        "bg2x": "images/pedals/crybaby_wah_bg@2x.png"
+      }
+    }
+  ],
+  "boards": [
+    {
+      "id": "ambient_shoegaze",
+      "name": "Ambient Shoegaze",
+      "genre": "ambient",
+      "story": "Ambient Shoegaze \u2014 Wide, washed-out ambience for wall-of-sound chords and soaring leads. Modulation into long delays and reverb\u2014let notes blur into a moving pad. Shoegaze / ambient wall-of-sound Phaser into Big Muff into reverb with heavy sustain",
+      "path": "boards/ambient_shoegaze.board"
+    },
+    {
+      "id": "boutique_transparent",
+      "name": "Boutique Transparent",
+      "genre": "boutique",
+      "story": "Boutique Transparent \u2014 A touch-sensitive \u2018expensive clean\u2019 chain: subtle compression, transparent drive, and polish. Designed to feel like your amp got better overnight. Stacked transparent overdrives Tumnus into Morning Glory for dynamic response",
+      "path": "boards/boutique_transparent.board"
+    },
+    {
+      "id": "classic_rock_stack",
+      "name": "Classic Rock Stack",
+      "genre": "classic",
+      "story": "Classic Rock Stack \u2014 A straightforward rock rig: pushy drive into a chewy mod/delay. Built for riffs, choruses, and solos that cut without sounding modern or scooped. 70s British rock tones Morning Glory into Big Muff",
+      "path": "boards/classic_rock_stack.board"
+    },
+    {
+      "id": "classic_wah_drive",
+      "name": "Classic Wah Drive",
+      "genre": "classic",
+      "story": "Classic Wah Drive \u2014 Wah into a responsive drive for classic lead phrasing. Think vocal sweeps, dynamic attack, and that instantly recognizable \u2018talking guitar\u2019 feel. Classic wah-into-drive (Clapton / Slash style) Cry Baby into transparent overdrive for vocal lead tones",
+      "path": "boards/classic_wah_drive.board"
+    },
+    {
+      "id": "edge_u2_dotted_eighth",
+      "name": "Edge U2 Dotted Eighth",
+      "genre": "edge",
+      "story": "Edge U2 Dotted Eighth \u2014 Dotted-eighth delay rhythms for shimmering arpeggios. Tight repeats and controlled ambience so the groove stays defined. The Edge's U2 rig - Dotted eighth note delay shimmer Compressor into transparent drive into analog delay",
+      "path": "boards/edge_u2_dotted_eighth.board"
+    },
+    {
+      "id": "funk_envelope",
+      "name": "Funk Rhythm",
+      "genre": "funk",
+      "story": "Funk Rhythm \u2014 Snappy, tight, and clean\u2014built for percussive right-hand playing. Compression and filtering-style motion to make muted rhythms pop. Funk / R&B rhythm rig Compressor into wah (parked) into optical tremolo - tight and percussive",
+      "path": "boards/funk_envelope.board"
+    },
+    {
+      "id": "gilmour_dark_side",
+      "name": "Gilmour Dark Side",
+      "genre": "gilmour",
+      "story": "Gilmour Dark Side \u2014 Big, spacious lead tones with modulation and delay that bloom. Smooth sustain and width for melodic lines that feel cinematic. David Gilmour - Dark Side of the Moon era Phaser into Fuzz Face into analog delay into tremolo",
+      "path": "boards/gilmour_dark_side.board"
+    },
+    {
+      "id": "harmonic_trem_ambient",
+      "name": "Harmonic Trem Ambient",
+      "genre": "harmonic",
+      "story": "Harmonic Trem Ambient \u2014 Lush harmonic tremolo into ambience: pulsing movement that turns simple chords into evolving texture. Ambient harmonic tremolo rig Compressor into light drive into harmonic tremolo into reverb",
+      "path": "boards/harmonic_trem_ambient.board"
+    },
+    {
+      "id": "hendrix_univibe",
+      "name": "Hendrix Uni-Vibe",
+      "genre": "hendrix",
+      "story": "Hendrix Uni-Vibe \u2014 Univibe-forward swirl with just enough gain to sing. A psychedelic, chewy motion that loves single notes and double-stops. Jimi Hendrix - Band of Gypsys era Wah into Fuzz Face into Uni-Vibe with chorus mode",
+      "path": "boards/hendrix_univibe.board"
+    },
+    {
+      "id": "high_gain_crunch",
+      "name": "High Gain Crunch",
+      "genre": "high",
+      "story": "High Gain Crunch \u2014 Tight, modern crunch with controlled noise and focused low end. Built for palm-mutes, aggressive rhythms, and punchy lead sustain. Modern rock/metal gain stack OCD into RAT for tight distortion",
+      "path": "boards/high_gain_crunch.board"
+    },
+    {
+      "id": "indie_alt_rock",
+      "name": "Indie Alt Rock",
+      "genre": "indie",
+      "story": "Indie Alt Rock \u2014 A versatile indie chain: edge-of-breakup drive, tasteful modulation, and medium delay. Works for jangly cleans through gritty choruses. 90s-2000s alternative rock tones Big Muff into Blues Driver",
+      "path": "boards/indie_alt_rock.board"
+    },
+    {
+      "id": "jazz_clean",
+      "name": "Jazz Clean",
+      "genre": "jazz",
+      "story": "Jazz Clean \u2014 Clean, even dynamics with gentle sweetening. Designed for articulation, warm chords, and a polished tone that stays out of the way. Jazz clean - warm and articulate Light compression, chorus shimmer, touch of reverb",
+      "path": "boards/jazz_clean.board"
+    },
+    {
+      "id": "john_mayer_continuum",
+      "name": "John Mayer Continuum",
+      "genre": "john",
+      "story": "John Mayer Continuum \u2014 Glassier blues tones: light compression, transparent drive, and that \u2018strat into a good amp\u2019 elasticity. Responsive to touch and volume knob. John Mayer's Continuum-era pedalboard Keeley Compressor into dual Tube Screamers",
+      "path": "boards/john_mayer_continuum.board"
+    },
+    {
+      "id": "late_night",
+      "name": "Late Night",
+      "genre": "late",
+      "story": "Late Night \u2014 Low-noise, mix-friendly tones for quiet playing. Smoother top end, controlled dynamics, and ambience that feels big without being loud.",
+      "path": "boards/late_night.board"
+    },
+    {
+      "id": "modern_blues",
+      "name": "Modern Blues",
+      "genre": "modern",
+      "story": "Modern Blues \u2014 A modern blues board: touch-sensitive drive with space and a little motion. Cleans up well and stacks naturally for solos. Contemporary blues rig Klon-style drive into Tube Screamer",
+      "path": "boards/modern_blues.board"
+    },
+    {
+      "id": "nashville_session",
+      "name": "Nashville Session",
+      "genre": "nashville",
+      "story": "Nashville Session \u2014 Studio-ready consistency: compression into a polite drive with time-based polish. Built to sit in a track without harsh peaks. Studio-ready Nashville session tone Compression into transparent drive",
+      "path": "boards/nashville_session.board"
+    },
+    {
+      "id": "psychedelic_60s",
+      "name": "Psychedelic 60s",
+      "genre": "psychedelic",
+      "story": "Psychedelic 60s \u2014 Slow sweeps, swirling modulation, and warm repeats. Designed for trippy chords, melodic hooks, and that saturated 60s movement. 1960s psychedelic rig Uni-Vibe into optical tremolo into tape-style delay - wobbly and warped",
+      "path": "boards/psychedelic_60s.board"
+    },
+    {
+      "id": "srv_texas_flood",
+      "name": "SRV Texas Flood",
+      "genre": "srv",
+      "story": "SRV Texas Flood \u2014 Punchy mid-forward blues drive with dynamics intact. Thick, sustaining lead tone that still has string-to-string clarity. Stevie Ray Vaughan's Texas Flood Rig Tube Screamer stacked into Fuzz Face",
+      "path": "boards/srv_texas_flood.board"
+    },
+    {
+      "id": "surf_rock",
+      "name": "Surf Rock",
+      "genre": "surf",
+      "story": "Surf Rock \u2014 Bright, splashy, and rhythmic: classic tremolo and space for springy vibes. Great for staccato picking and big open chords. Dick Dale surf rock rig Chorus into tremolo into spring reverb - dripping wet",
+      "path": "boards/surf_rock.board"
+    },
+    {
+      "id": "worship_ambient",
+      "name": "Worship Ambient",
+      "genre": "worship",
+      "story": "Worship Ambient \u2014 Big, clean worship ambience: controlled compression into gentle drive, spacious repeats, and lush reverb for pads and swells. Worship / ambient lead tones Stacked transparent drives into delay and reverb",
+      "path": "boards/worship_ambient.board"
+    }
+  ]
+}

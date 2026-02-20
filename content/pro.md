@@ -53,6 +53,11 @@ They take our WDF circuit designs and turn them into physical pedals. Same math,
 
 If you want a PedalKernel circuit in physical form, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
 
+
+## Included Pedals & Boards
+
+Browse the full Pro catalog (pedals + boards): **[Browse →](/pro/browse/)**
+
 ## Pricing
 
 **$49** — one time, no subscription.
