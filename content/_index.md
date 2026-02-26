@@ -53,7 +53,7 @@ Analog bucket-brigade delay simulation. Clock noise, aliasing, the degradation o
 
 ## Open Source
 
-The kernel is licensed MIT. Use it for whatever you want. Build a commercial plugin. Build a hardware DSP box. Build a web-based guitar pedal simulator. Just don't blame us if you blow up your speakers.
+The kernel is licensed under the AGPLv3. This means any derivative work must also be open source. Build a hardware DSP box. Build a web-based guitar pedal simulator. Just don't blame us if you blow up your speakers.
 
 **[github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel)**
 
@@ -89,10 +89,10 @@ This city has a long history of sonic experimentation. We're just carrying that 
 ## FAQ
 
 **Q: Is PedalKernel really free?**  
-A: Yes. MIT licensed. Use it however you want.
+A: Yes. AGPLv3 licensed. The code is free and open source.
 
 **Q: Can I use this in a commercial product?**  
-A: Yes. That's the point of MIT. Just include the license.
+A: You can use it, but any derivative work must also be open source under AGPLv3. Just include the license.
 
 **Q: Do I need to know Rust?**  
 A: To hack on the kernel, yes. To just use the plugin, no.
