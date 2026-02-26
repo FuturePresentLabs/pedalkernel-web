@@ -20,18 +20,19 @@ Instead of approximating how pedals sound, we model how they actually work at th
 
 The same techniques used in academic research and high-end hardware modeling, now in a plugin you can actually afford.
 
-## The Circuits
+## The PedalKernel Legends Bundle
 
-Three classics, modeled component-by-component:
+Five legendary circuits, modeled component-by-component:
 
-### Overdrive
-Tube Screamer-style soft clipping. The mid-hump that cuts through a mix, the smooth saturation that responds to your picking dynamics. We modeled the op-amp, the diodes, the tone stack — the whole signal path.
+| Circuit | Type | Why It's Legendary |
+|---------|------|-------------------|
+| **Klon Centaur** | Overdrive | The $5000 unicorn everyone wants |
+| **Memory Man** | BBD Delay | MN3005 warm analog repeats |
+| **Uni-Vibe** | Modulation | Hendrix, Gilmour, Trower tone |
+| **RE-201 Space Echo** | Tape + Reverb | Ambient/shoegaze essential |
+| **Tweed Deluxe 5E3** | Tube Amp | Neil Young's $2000 amp |
 
-### FuzzFace  
-Germanium fuzz with the harsh, splattery breakup that defined 60s rock. The temperamental transistors that change character as they warm up. We captured that instability and made it musical.
-
-### Delay
-Analog-style bucket-brigade delay. The degradation, the clock noise, the way repeats darken and dissolve. Digital delay that actually sounds analog.
+You're getting a $5000 Klon, a $2000 amp, and three other legendary circuits for $49.
 
 ## Under the Hood
 
@@ -52,11 +53,6 @@ Software is our focus, but we know some of you want the real thing. That's why w
 They take our WDF circuit designs and turn them into physical pedals. Same math, same component values, but with actual solder and metal boxes. Hand-wired, laser-engraved, built to last.
 
 If you want a PedalKernel circuit in physical form, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
-
-
-## Included Pedals & Boards
-
-Browse the full Pro catalog (pedals + boards): **[Browse →](/pro/browse/)**
 
 ## Pricing
 
