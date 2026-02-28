@@ -51,9 +51,13 @@ Germanium fuzz with all the instability that makes it musical. Temperature-depen
 ### Delay
 Analog bucket-brigade delay simulation. Clock noise, aliasing, the degradation of repeats as they circulate through the delay line. Digital delay that actually sounds analog.
 
-## Open Source
+## Open Source (Open Core)
 
-The kernel is licensed under the AGPLv3. This means any derivative work must also be open source. Build a hardware DSP box. Build a web-based guitar pedal simulator. Just don't blame us if you blow up your speakers.
+PedalKernel follows the **Open Core** model — the same approach used by Apache, MongoDB, and many successful open source projects.
+
+**The kernel is free and open source** under AGPLv3. This includes the WDF framework, circuit models, and reference implementations. Build whatever you want. Fork it. Hack on it. Just share your improvements.
+
+**Commercial licensing is available** if you need to build proprietary products. Our partner **[Puget Audio](https://puget.audio/)** sells professional VST3 plugins built on PedalKernel. If you're interested in using PedalKernel for commercial development, [reach out to purchase a license](mailto:info@pedalkernel.com).
 
 **[github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel)**
 
@@ -92,7 +96,7 @@ This city has a long history of sonic experimentation. We're just carrying that 
 A: Yes. AGPLv3 licensed. The code is free and open source.
 
 **Q: Can I use this in a commercial product?**  
-A: You can use it, but any derivative work must also be open source under AGPLv3. Just include the license.
+A: The open source kernel is AGPLv3, so any derivative work must also be open source. For proprietary commercial use, [contact us](mailto:info@pedalkernel.com) about licensing options.
 
 **Q: Do I need to know Rust?**  
 A: To hack on the kernel, yes. To just use the plugin, no.
