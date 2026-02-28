@@ -54,13 +54,14 @@ They take our WDF circuit designs and turn them into physical pedals. Same math,
 
 If you want a PedalKernel circuit in physical form, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
 
-## Pricing
+## Get It From
 
-**$49** — one time, no subscription.
+Available through our partner **[Puget Audio](https://puget.audio/)** — a boutique pedal builder here in Seattle.
 
+**$49** — one time, no subscription.  
 VST3 for macOS, Windows, and Linux. Unlimited device activations. All future updates free.
 
-[Buy PedalKernel Pro →](/checkout/)
+[Get PedalKernel Pro from Puget Audio →](https://puget.audio/)
 
 ## FAQ
 
