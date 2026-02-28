@@ -87,6 +87,6 @@ A: The kernel is open source at [github.com/ajmwagar/pedalkernel](https://github
 
 Questions? Ideas? Want to talk about germanium transistor matching?
 
-Email us: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
+Email us: [info@pedalkernel.com](mailto:info@pedalkernel.com)
 
 Built with care in the Pacific Northwest.

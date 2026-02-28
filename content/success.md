@@ -17,7 +17,7 @@ Your purchase of PedalKernel Pro is complete.
 
 ### Need help?
 
-Email us: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
+Email us: [info@pedalkernel.com](mailto:info@pedalkernel.com)
 
 We're a small team in Seattle, so we might not reply instantly — but we will reply.
 

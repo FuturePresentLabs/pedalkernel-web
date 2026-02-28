@@ -26,4 +26,4 @@ customizations:
   - field_id: "consultation"
     name: "Consultation Required"
     type: "note"
-    description: "Email hello@pedalkernel.com to discuss your custom circuit. Physical build handled by our partners at Puget Audio."
+    description: "Email info@pedalkernel.com to discuss your custom circuit. Physical build handled by our partners at Puget Audio."

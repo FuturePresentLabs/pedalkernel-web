@@ -111,6 +111,6 @@ A: The kernel is the engine. Pro is a car built on that engine — polished UI, 
 Questions? Ideas? Want to talk about scattering parameters?
 
 - GitHub Issues: [github.com/ajmwagar/pedalkernel/issues](https://github.com/ajmwagar/pedalkernel/issues)
-- Email: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
+- Email: [info@pedalkernel.com](mailto:info@pedalkernel.com)
 
 Built with care in the Pacific Northwest.

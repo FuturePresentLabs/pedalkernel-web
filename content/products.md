@@ -46,4 +46,4 @@ They offer:
 
 ## Questions?
 
-Email us: [hello@pedalkernel.com](mailto:hello@pedalkernel.com)
+Email us: [info@pedalkernel.com](mailto:info@pedalkernel.com)
