@@ -20,20 +20,6 @@ Instead of approximating how pedals sound, we model how they actually work at th
 
 The same techniques used in academic research and high-end hardware modeling, now in a plugin you can actually afford.
 
-## The PedalKernel Legends Bundle
-
-Five legendary circuits, modeled component-by-component:
-
-| Circuit | Type | Why It's Legendary |
-|---------|------|-------------------|
-| **Klon Centaur** | Overdrive | The $5000 unicorn everyone wants |
-| **Memory Man** | BBD Delay | MN3005 warm analog repeats |
-| **Uni-Vibe** | Modulation | Hendrix, Gilmour, Trower tone |
-| **RE-201 Space Echo** | Tape + Reverb | Ambient/shoegaze essential |
-| **Tweed Deluxe 5E3** | Tube Amp | Neil Young's $2000 amp |
-
-You're getting a $5000 Klon, a $2000 amp, and three other legendary circuits for $49.
-
 ## Under the Hood
 
 Built in **Rust** for memory safety without garbage collection. JACK audio integration for pro-level latency. Composable circuit trees mean we can build complex circuits from simple primitives.
@@ -46,17 +32,30 @@ We're based in Seattle, Washington — home of Jimi Hendrix, Nirvana, Soundgarde
 
 This city has a long history of sonic experimentation. We're just carrying that forward into the digital realm.
 
-## Physical Pedals: The Puget Audio Partnership
+## The Puget Audio Partnership
 
-Software is our focus, but we know some of you want the real thing. That's why we've partnered with **[Puget Audio](https://puget.audio/)** — a boutique pedal builder here in Seattle.
+We've partnered with **[Puget Audio](https://puget.audio/)** — a Seattle-based audio company that brings PedalKernel circuits to life in both software and hardware.
 
-They take our WDF circuit designs and turn them into physical pedals. Same math, same component values, but with actual solder and metal boxes. Hand-wired, laser-engraved, built to last.
+Puget Audio offers:
 
-If you want a PedalKernel circuit in physical form, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
+- **VST3 + CLAP Plugins** — Pre-built, ready-to-use plugins based on our WDF circuits. Same code, professional packaging.
+- **Physical Pedals** — Hand-wired, laser-engraved stompboxes. Same math, same component values, but with actual solder and metal boxes built to last.
+
+If you want PedalKernel circuits without compiling code, [check out Puget Audio](https://puget.audio/). They offer standard builds and custom one-offs for the true tone-freaks.
+
+## Commercial Licensing
+
+Want to use the PedalKernel WDF engine in your own commercial product? We offer flexible licensing options:
+
+- **Plugin Licensing** — White-label VST3/CLAP/AU/AAX plugins built on our kernel
+- **Hardware Licensing** — DSP implementations for pedal and amp manufacturers
+- **Custom Development** — Circuit modeling, porting, and integration services
+
+Email [hello@pedalkernel.com](mailto:hello@pedalkernel.com) to discuss your project.
 
 ## Get It From
 
-Available through our partner **[Puget Audio](https://puget.audio/)** — a boutique pedal builder here in Seattle.
+Available through our partner **[Puget Audio](https://puget.audio/)**.
 
 **$49** — one time, no subscription.  
 VST3 for macOS, Windows, and Linux. Unlimited device activations. All future updates free.
