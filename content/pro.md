@@ -51,7 +51,7 @@ Want to use the PedalKernel WDF engine in your own commercial product? We offer 
 - **Hardware Licensing** — DSP implementations for pedal and amp manufacturers
 - **Custom Development** — Circuit modeling, porting, and integration services
 
-Email [hello@pedalkernel.com](mailto:hello@pedalkernel.com) to discuss your project.
+Email [avery@pedalkernel.com](mailto:avery@pedalkernel.com) to discuss your project.
 
 ## Get It From
 
@@ -86,6 +86,6 @@ A: The kernel is open source at [github.com/ajmwagar/pedalkernel](https://github
 
 Questions? Ideas? Want to talk about germanium transistor matching?
 
-Email us: [info@pedalkernel.com](mailto:info@pedalkernel.com)
+Email us: [avery@pedalkernel.com](mailto:avery@pedalkernel.com)
 
 Built with care in the Pacific Northwest.
