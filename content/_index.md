@@ -19,11 +19,18 @@ We simulate the actual circuit — resistors, capacitors, op-amps, transistors �
 
 **[github.com/ajmwagar/pedalkernel](https://github.com/ajmwagar/pedalkernel)**
 
-## The Pro Plugin
+## PedalKernel Pro
 
-We also build a commercial VST3 plugin called **PedalKernel Pro**. Built on the same open source kernel, but with a polished UI, more effects, and professional support.
+**PedalKernel Pro** is how we work with companies building commercial products on our technology — hardware manufacturers, plugin developers, and audio companies.
 
-[Check it out →](/pro/)
+We offer licensing for:
+- White-label VST/CLAP/AU/AAX plugins
+- DSP implementations for hardware
+- Custom circuit modeling and development
+
+Our consumer plugins are distributed by **[Puget Audio](https://puget.audio/)** as **Puget Legends** — a collection of meticulously modeled classic pedals and studio processors.
+
+[Learn about Pro licensing →](/pro/)
 
 ## Physical Pedals
 
@@ -43,7 +50,7 @@ A: The open source kernel is AGPLv3. For proprietary use, [contact us](mailto:av
 A: To hack on the kernel, yes. To use the plugin, no.
 
 **Q: What's the difference between the kernel and Pro?**  
-A: The kernel is the engine. Pro is a car built on that engine — polished UI, more effects, professional support.
+A: The kernel is the open source engine. Pro is our commercial licensing program for companies building products on that engine.
 
 ## Contact
 
