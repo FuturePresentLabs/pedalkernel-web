@@ -17,7 +17,7 @@ We partner with hardware manufacturers, plugin developers, and audio companies t
 
 White-label VST3, CLAP, AU, and AAX plugins built on the PedalKernel kernel. You bring the circuits or choose from our reference library — we handle the DSP, UI, and packaging.
 
-Our partner **[Puget Audio](https://puget.audio/)** distributes consumer-facing plugins under the **Puget Legends** brand — a collection of meticulously modeled classic pedals and studio processors.
+Our partner **[Puget Audio](https://puget.audio/)** distributes consumer-facing plugins. **Puget Legends** is the first collection — meticulously modeled classic pedals and studio processors. More software releases are in development, along with Eurorack modules and multi-effects guitar pedals.
 
 [Explore Puget Legends →](https://puget.audio/plugins/legends/)
 

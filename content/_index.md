@@ -32,11 +32,13 @@ Our consumer plugins are distributed by **[Puget Audio](https://puget.audio/)** 
 
 [Learn about Pro licensing →](/pro/)
 
-## Physical Pedals
+## Puget Audio Partnership
 
-Our circuit designs are being turned into physical pedals by **[Puget Audio](https://puget.audio/)** — a boutique builder here in Seattle.
+We're working with **[Puget Audio](https://puget.audio/)** — a Seattle-based audio company — to bring PedalKernel circuits to life in both software and hardware.
 
-[Check them out →](https://puget.audio/)
+**Puget Legends** is the first plugin collection built on our kernel. It's just the beginning — there's more coming on the software side, plus Eurorack modules and multi-effects guitar pedals in development.
+
+[Check out Puget Audio →](https://puget.audio/)
 
 ## FAQ
 
@@ -44,7 +46,7 @@ Our circuit designs are being turned into physical pedals by **[Puget Audio](htt
 A: Yes. AGPLv3 licensed.
 
 **Q: Can I use this commercially?**  
-A: The open source kernel is AGPLv3. For proprietary use, [contact us](mailto:avery@pedalkernel.com) about licensing.
+A: The open source kernel is AGPLv3. For proprietary use, see [PedalKernel Pro](/pro/) for licensing options.
 
 **Q: Do I need to know Rust?**  
 A: To hack on the kernel, yes. To use the plugin, no.
